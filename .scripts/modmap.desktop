@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=startup script
+GenericName=startupscript
+Comment=Startup script for change Caps_Lock key
+Exec
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
