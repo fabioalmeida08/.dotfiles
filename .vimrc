@@ -31,7 +31,7 @@ set number
 set cursorline
 
 " Highlight cursor line underneath the cursor vertically.
-set cursorcolumn
+#set cursorcolumn
 
 " Set shift width to 4 spaces.
 set shiftwidth=4
