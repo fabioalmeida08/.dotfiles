@@ -123,3 +123,7 @@ super + {Left,Down,Up,Right}
 # lockscreen
 super + x
 	betterlockscreen --lock blur
+
+# pavucontrol
+super + v
+	pavucontrol
