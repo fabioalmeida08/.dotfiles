@@ -124,6 +124,9 @@ super + {Left,Down,Up,Right}
 super + x
 	betterlockscreen --lock blur
 
+super + ctrl + x
+	dm-tool lock
+
 # pavucontrol
 super + v
 	pavucontrol
