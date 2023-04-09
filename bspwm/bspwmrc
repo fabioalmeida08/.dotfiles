@@ -6,7 +6,7 @@ picom &
 
 xsetroot -cursor_name left_ptr &
 
-nitrogen --set-zoom-fill &
+nitrogen /usr/share/wallpapers --random --set-zoom-fill &
 
 $HOME/.config/polybar/launch.sh
 
