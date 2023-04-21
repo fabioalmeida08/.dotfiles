@@ -1,3 +1,6 @@
+[org/gnome/shell/extensions/pop-shell]
+tile-enter=@as []
+
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
 screensaver=['<Super>x']
@@ -30,5 +33,3 @@ font-hinting='slight'
 gtk-theme='adw-gtk3-dark'
 icon-theme='Papirus-Dark'
 
-[org/gnome/shell/extensions/pop-shell]
-tile-enter=@as []
