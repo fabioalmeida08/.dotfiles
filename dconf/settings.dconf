@@ -29,3 +29,6 @@ font-antialiasing='grayscale'
 font-hinting='slight'
 gtk-theme='adw-gtk3-dark'
 icon-theme='Papirus-Dark'
+
+[org/gnome/shell/extensions/pop-shell]
+tile-enter=@as []
