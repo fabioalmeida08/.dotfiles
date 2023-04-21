@@ -21,3 +21,11 @@ name='toggle title bar'
 binding='Print'
 command='flameshot gui'
 name='flameshot'
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-theme='Bibata-Modern-Classic'
+font-antialiasing='grayscale'
+font-hinting='slight'
+gtk-theme='adw-gtk3-dark'
+icon-theme='Papirus-Dark'
