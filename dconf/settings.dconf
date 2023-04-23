@@ -5,6 +5,9 @@ tile-enter=@as []
 show-screenshot-ui=@as []
 toggle-message-tray=@as []
 
+[org/gnome/desktop/interface]
+clock-show-weekday=true
+
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
 screensaver=['<Super>x']
