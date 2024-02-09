@@ -21,6 +21,7 @@ M.personal = {
     ["<leader>rl"] = {"<cmd> vertical resize +10 <CR>", "vertical resize +"},
     ["<leader>rj"] = {"<cmd> horizontal resize -10 <CR>", "horizontal resize -"},
     ["<leader>rk"] = {"<cmd> horizontal resize +10 <CR>", "horizontal resize +"},
+    ["<leader>d"] = {"<cmd> NoiceDismiss <CR>", "dismiss notifications"},
   },
 }
   

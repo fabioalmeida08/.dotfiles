@@ -1,6 +1,6 @@
 [user]
-name = 
-email = 
+name = "fabio"
+email =  
 [alias]
 	s = !git status -s
 	a = !git add -A
