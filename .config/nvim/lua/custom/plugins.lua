@@ -3,6 +3,9 @@ local plugins = {
     "nvim-neotest/nvim-nio",
   },
   {
+    "nvim-tree/nvim-web-devicons"
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -32,13 +35,6 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end
   },  
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   ft = {"python"},
-  --   opts = function()
-  --     return require "custom.configs.null-ls"
-  --   end,
-  -- },
   {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
