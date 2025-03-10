@@ -134,6 +134,7 @@ alias yof="yup ; pof"
 alias vim="nvim"
 alias yy="yazi"
 alias lg="lazygit"
+alias cp="rsync -ahv --info=progress2"
 PATH=$PATH:~/.cargo/bin
 
 export editor=nvim
