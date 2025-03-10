@@ -132,6 +132,11 @@ alias ls="lsd"
 alias yup="yay --noconfirm"
 alias yof="yup ; pof"
 alias vim="nvim"
+alias yy="yazi"
+alias lg="lazygit"
 PATH=$PATH:~/.cargo/bin
 
 export editor=nvim
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
