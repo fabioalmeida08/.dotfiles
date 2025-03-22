@@ -22,15 +22,20 @@ M.personal = {
     ["<leader>rl"] = {"<cmd> vertical resize +10 <CR>", "vertical resize +"},
     ["<leader>rj"] = {"<cmd> horizontal resize -10 <CR>", "horizontal resize -"},
     ["<leader>rk"] = {"<cmd> horizontal resize +10 <CR>", "horizontal resize +"},
-    ["<leader>d"] = {"<cmd> NoiceDismiss <CR>", "dismiss notifications"},
+    ["<leader>dd"] = {"<cmd> NoiceDismiss <CR>", "dismiss notifications"},
   },
 }
   
 M.dap = {
-  plugin = true,
   n = {
-    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
-  }
+    ["<F5>"] = { "<cmd>lua require'dap'.continue()<CR>", "Continuar/Executar" },
+    ["<F10>"] = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
+    ["<F11>"] = { "<cmd>lua require'dap'.step_into()<CR>", "Step Into" },
+    ["<F12>"] = { "<cmd>lua require'dap'.step_out()<CR>", "Step Out" },
+    ["<leader>b"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+    ["<leader>dr"] = { "<cmd>lua require'dap'.repl.toggle()<CR>", "Toggle REPL" },
+    ["<leader>du"] = { "<cmd>lua require'dapui'.toggle()<CR>", "Toggle DAP UI" },
+  },
 }
 
 M.dap_python = {
