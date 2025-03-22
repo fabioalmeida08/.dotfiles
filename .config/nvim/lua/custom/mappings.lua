@@ -38,15 +38,21 @@ M.dap = {
   },
 }
 
-M.dap_python = {
-  plugin = true,
-  n = {
-    ["<leader>dpr"] = {
-      function()
-        require('dap-python').test_method()
-      end
-    }
-  }
+M.telescope = {
+  n = { -- Modo normal
+    ["<leader>fr"] = { "<cmd>Telescope live_grep<CR>", "Find Using Rip Grep" },
+  },
 }
+
+-- M.dap_python = {
+--   plugin = true,
+--   n = {
+--     ["<leader>dpr"] = {
+--       function()
+--         require('dap-python').test_method()
+--       end
+--     }
+--   }
+-- }
 return M
 
