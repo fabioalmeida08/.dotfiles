@@ -13,11 +13,12 @@ local plugins = {
         "pyright",
         "black",
         "debugpy",
-        "eslint-lsp",
+        -- "eslint-lsp",
         "mypy",
-        "prettierd",
-        "tailwindcss-language-server",
-        "typescript-language-server",
+        -- "prettierd",
+        -- "tailwindcss-language-server",
+        -- "typescript-language-server",
+        "clang-format"
       },
     },
   },
@@ -215,6 +216,7 @@ local plugins = {
           python = {"black" },
           -- Use a sub-list to run only the first available formatter
           javascript = { { "prettierd", "prettier" } },
+          c = {"clang-format"}
         },
         format_on_save = {
           -- These options will be passed to conform.format()
