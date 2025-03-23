@@ -32,6 +32,19 @@ M.setup = function()
     },
   }
 
+
+  dap.configurations.python = {
+    {
+      type = "python",
+      request = "launch",
+      name = "Launch file",
+      program = "${file}", -- Depura o arquivo atual
+      pythonPath = function()
+        return vim.fn.exepath("python3") -- Usa o Python do sistema ou virtualenv
+      end,
+    },
+  }
+
   -- Integração com nvim-dap-ui (opcional)
   local dapui = require("dapui")
   dap.listeners.after.event_initialized["dapui_config"] = function()
