@@ -15,7 +15,7 @@ local plugins = {
         "debugpy",
         -- "eslint-lsp",
         "mypy",
-        "pythons-lsp-server",
+        "python-lsp-server",
         -- "prettierd",
         -- "tailwindcss-language-server",
         -- "typescript-language-server",
