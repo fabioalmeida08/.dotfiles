@@ -32,6 +32,11 @@ local plugins = {
     end
   },
   {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    event = "BufRead",
+  },
+  {
     "rust-lang/rust.vim",
     ft= "rust",
     init = function ()
