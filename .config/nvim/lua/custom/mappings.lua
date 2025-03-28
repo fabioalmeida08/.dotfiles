@@ -24,7 +24,8 @@ M.personal = {
     ["<leader>rk"] = {"<cmd> horizontal resize +10 <CR>", "horizontal resize +"},
     ["<leader>dd"] = {"<cmd> NoiceDismiss <CR>", "dismiss notifications"},
     ["<C-d>"] = { "<Plug>(VM-Find-Under)", "Selecionar próxima ocorrência" },
-    ["<leader>sa"] = { "<Plug>(VM-Select-All)", "Selecionar todas as ocorrências" }
+    ["<leader>sa"] = { "<Plug>(VM-Select-All)", "Selecionar todas as ocorrências" },
+    ["<leader>ta"] = { "<cmd>ASToggle<CR>" , "Toggle Auto Save"},
   },
 }
   
