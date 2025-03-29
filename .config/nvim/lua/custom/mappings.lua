@@ -4,6 +4,7 @@ local M = {}
 M.disabled = {
   n = {
       ["<leader>q"] = "",
+      ["<C-n>"] = ""
   }
 }
 -- Your custom mappings
@@ -26,6 +27,9 @@ M.personal = {
     ["<C-d>"] = { "<Plug>(VM-Find-Under)", "Selecionar próxima ocorrência" },
     ["<leader>sa"] = { "<Plug>(VM-Select-All)", "Selecionar todas as ocorrências" },
     ["<leader>ta"] = { "<cmd>ASToggle<CR>" , "Toggle Auto Save"},
+    ["<leader>ld"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
+    ["<leader>lh"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+    ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "Toggle NvimTree" }
   },
 }
   
@@ -56,6 +60,13 @@ M.dap_python = {
       end
     }
   }
+}
+
+M.lspconfig = {
+  n = {
+      ["ld"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
+      ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+  },
 }
 return M
 
