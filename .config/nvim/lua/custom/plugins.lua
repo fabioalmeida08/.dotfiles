@@ -21,6 +21,7 @@ local plugins = {
         -- "typescript-language-server",
         "clang-format",
         "codelldb",
+        "clangd",
       },
     },
   },
@@ -179,7 +180,8 @@ local plugins = {
         "javascript",
         "typescript",
         "tsx",
-        "rust"
+        "rust",
+        "c",
       }
       return opts
     end,
