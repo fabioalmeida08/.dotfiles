@@ -39,7 +39,7 @@ M.dap = {
     ["<F10>"] = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
     ["<F11>"] = { "<cmd>lua require'dap'.step_into()<CR>", "Step Into" },
     ["<F12>"] = { "<cmd>lua require'dap'.step_out()<CR>", "Step Out" },
-    ["<leader>b"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+    ["<leader>db"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
     ["<leader>dr"] = { "<cmd>lua require'dap'.repl.toggle()<CR>", "Toggle REPL" },
     ["<leader>du"] = { "<cmd>lua require'dapui'.toggle()<CR>", "Toggle DAP UI" },
   },
