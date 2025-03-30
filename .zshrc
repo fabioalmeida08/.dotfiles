@@ -138,6 +138,3 @@ alias cp="rsync -ahv --info=progress2"
 PATH=$PATH:~/.cargo/bin
 
 export editor=nvim
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
