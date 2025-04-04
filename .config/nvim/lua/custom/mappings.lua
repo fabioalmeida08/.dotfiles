@@ -29,7 +29,9 @@ M.personal = {
     ["<leader>ta"] = { "<cmd>ASToggle<CR>" , "Toggle Auto Save"},
     ["<leader>ld"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
     ["<leader>lh"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
-    ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "Toggle NvimTree" }
+    ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "Toggle NvimTree" },
+    ["<leader>qf"] = { "<cmd>lua vim.lsp.buf.code_action({ apply = true })<CR>", "Apply Auto-Fix" },
+    ["<leader>qp"] = { "<cmd>lua vim.lsp.buf.code_action({ filter = function(a) return a.isPreferred end, apply = true })<CR>", "Apply Preferred Fix" },
   },
 }
   

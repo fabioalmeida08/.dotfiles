@@ -31,7 +31,7 @@ lspconfig.clangd.setup {
   --     -- Função chamada quando o LSP se conecta ao buffer
   --     print("LSP clangd conectado!")
   -- end,
-  cmd = { "clangd" }, -- Comando para iniciar o clangd
+  cmd = { "clangd" , "--header-insertion=iwyu" , "--background-index"}, -- Comando para iniciar o clangd
   filetypes = { "c", "cpp", "objc", "objcpp" }, -- Tipos de arquivo suportados
   root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"), -- Diretório raiz do projeto
 }
