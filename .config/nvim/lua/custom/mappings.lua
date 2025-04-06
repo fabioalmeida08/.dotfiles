@@ -32,6 +32,8 @@ M.personal = {
     ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "Toggle NvimTree" },
     ["<leader>qf"] = { "<cmd>lua vim.lsp.buf.code_action({ apply = true })<CR>", "Apply Auto-Fix" },
     ["<leader>qp"] = { "<cmd>lua vim.lsp.buf.code_action({ filter = function(a) return a.isPreferred end, apply = true })<CR>", "Apply Preferred Fix" },
+    ["<leader>md"] = { "<cmd>lua require('neogen').generate()<CR>", "Gerar docs (Neogen)" },
+
   },
 }
   

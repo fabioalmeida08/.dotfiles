@@ -242,5 +242,13 @@ local plugins = {
       -- },      
     },
   },
+  {
+    "danymat/neogen",
+    config = function()
+      require('neogen').setup {}
+    end,
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    cmd = "Neogen",
+  },
 }
 return plugins
