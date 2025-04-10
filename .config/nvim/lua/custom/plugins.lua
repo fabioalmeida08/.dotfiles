@@ -214,7 +214,16 @@ local plugins = {
           python = {"black" },
           -- Use a sub-list to run only the first available formatter
           javascript = { { "prettierd", "prettier" } },
-          c = {"clang-format"}
+          -- c = {"clang-format"}
+          c = { "clang_format_custom"},
+
+        },
+        formatters = {
+          clang_format_custom = {
+            command = "clang-format",
+            args = { "--style=file", "--assume-filename", vim.fn.expand("$HOME") .. "/.clang-format" },
+            stdin = true,
+          },
         },
         format_on_save = {
           -- These options will be passed to conform.format()
