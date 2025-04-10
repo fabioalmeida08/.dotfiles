@@ -221,7 +221,7 @@ local plugins = {
         formatters = {
           clang_format_custom = {
             command = "clang-format",
-            args = { "--style=file", "--assume-filename", vim.fn.expand("$HOME") .. "/.clang-format" },
+            args = { "--style=file", "--assume-filename", vim.fn.expand("$HOME") .. "/.config/nvim/.clang-format" },
             stdin = true,
           },
         },
