@@ -33,6 +33,8 @@ M.personal = {
     ["<leader>qf"] = { "<cmd>lua vim.lsp.buf.code_action({ apply = true })<CR>", "Apply Auto-Fix" },
     ["<leader>qp"] = { "<cmd>lua vim.lsp.buf.code_action({ filter = function(a) return a.isPreferred end, apply = true })<CR>", "Apply Preferred Fix" },
     ["<leader>md"] = { "<cmd>lua require('neogen').generate()<CR>", "Gerar docs (Neogen)" },
+    ["<leader>mf"] = { "<cmd>lua require('conform').format({ async = true, lsp_fallback = true })<CR> ","Formatar código (Conform)" },
+
 
   },
 }
