@@ -242,7 +242,7 @@ local plugins = {
     opts = {
       -- your config goes here
       -- or just leave it empty :)
-      enabled = false, -- Ativa o autosave por padrão
+      enabled = true, -- Ativa o autosave por padrão
       execution_message = nil --{
       --     message = function()
       --         return "" -- Retorna string vazia para desativar a mensagem
@@ -259,6 +259,37 @@ local plugins = {
     end,
     dependencies = "nvim-treesitter/nvim-treesitter",
     cmd = "Neogen",
+  },
+ {
+	"Diogo-ss/42-header.nvim",
+    cmd = { "Stdheader" },
+    config = function()
+      require("42header").setup({
+        default_map = true,
+        auto_update = true,
+        user = "fabialme",
+        mail = "fabialme@student.42sp.org.br",
+      })
+    end,
+  },
+  { -- This plugin
+  "Zeioth/compiler.nvim",
+  cmd = {"CompilerOpen", "CompilerToggleResults", "CompilerRedo"},
+  dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
+  opts = {},
+  },
+  { -- The task runner we use
+    "stevearc/overseer.nvim",
+    commit = "6271cab7ccc4ca840faa93f54440ffae3a3918bd",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+    opts = {
+      task_list = {
+        direction = "bottom",
+        min_height = 25,
+        max_height = 25,
+        default_detail = 1
+      },
+    },
   },
 }
 return plugins
