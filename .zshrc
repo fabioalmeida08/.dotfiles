@@ -135,6 +135,13 @@ alias vim="nvim"
 alias yy="yazi"
 alias lg="lazygit"
 alias cp="rsync -ahv --info=progress2"
+
 PATH=$PATH:~/.cargo/bin
+
+if command -v tmux &> /dev/null; then
+  if [ -z "$TMUX" ]; then
+    tmux attach || tmux new
+  fi
+fi
 
 export editor=nvim
