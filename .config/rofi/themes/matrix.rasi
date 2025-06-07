@@ -1,0 +1,117 @@
+* {
+  font:   "FiraCode Nerd Font 12"; /* Monospaced font for a terminal-like Matrix feel */
+
+  bg0     : #0D0208; /* Deep black with a slight blue tint for the Matrix void */
+  bg1     : #0D0208; /* Slightly lighter black for contrast */
+  bg2     : #0D0208; /* Subtle gray for secondary elements */
+  bg3     : #2a2e3b; /* Darker gray for borders */
+  fg0     : #00ff41; /* Bright Matrix green for primary text */
+  fg1     : #00cc00; /* Slightly darker green for secondary text */
+  fg2     : #009900; /* Muted green for less prominent text */
+  red     : #ff3333; /* Red for errors or highlights, Matrix-style */
+  green   : #00ff00; /* Core Matrix green for accents */
+  yellow  : #ffcc00; /* Amber for warnings, inspired by Matrix terminals */
+  blue    : #00b7eb; /* Cyan for a techy, futuristic highlight */
+  magenta : #cc00cc; /* Subtle purple for variety */
+  cyan    : #00cccc; /* Bright cyan for secondary highlights */
+
+  accent: @green; /* Matrix green as the primary accent */
+  urgent: @yellow; /* Amber for urgent notifications */
+
+  background-color : transparent;
+  text-color       : @fg0;
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+}
+
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+
+window {
+  location : northwest;
+  width    : 280px;
+  x-offset : 0px;
+  y-offset : 32px;
+
+  background-color: @bg1;
+  border: 2px;
+  border-color: @fg2;
+  border-radius: 0px; /* Slightly rounded for a sleek look */
+}
+
+inputbar {
+  spacing  : 8px;
+  padding  : 4px 8px;
+  children : [ icon-search, entry ];
+
+  background-color: @bg0; /* Deep black for the input bar */
+}
+
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 15px;
+  color    : @green; /* Green icon to match Matrix aesthetic */
+}
+
+textbox {
+  padding          : 4px 8px;
+  background-color : @bg2; /* Subtle gray for textboxes */
+}
+
+listview {
+  padding      : 4px 0px;
+  lines        : 10;
+  columns      : 1;
+  scrollbar    : true;
+  fixed-height : false;
+  dynamic      : true;
+}
+
+element {
+  padding : 4px 8px;
+  spacing : 8px;
+}
+
+element normal urgent {
+  text-color: @urgent; /* Amber for urgent items */
+}
+
+element normal active {
+  text-color: @accent; /* Matrix green for active items */
+}
+
+element alternate active {
+  text-color: @accent; /* Consistent green for alternate active */
+}
+
+element selected {
+  text-color       : @bg1; /* Dark background text for contrast */
+  background-color : @fg1; /* Green highlight for selected items */
+}
+
+element selected urgent {
+  background-color: @urgent; /* Amber for urgent selected items */
+}
+
+element-icon {
+  size: 1em;
+  color: @cyan; /* Cyan icons for a futuristic touch */
+}
+
+element-text {
+  text-color: inherit;
+}
+
+scrollbar {
+  handle-width : 4px;
+  handle-color : @fg2; /* Muted green for scrollbar */
+  padding      : 0 4px;
+}
