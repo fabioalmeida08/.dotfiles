@@ -349,9 +349,8 @@ bindsym $mod+shift+f exec thunar
 bindsym Print exec flameshot gui
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -f
-exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap -layout us -variant intl -option caps:escape
 exec --no-startup-id ~/.screenlayout/screen.sh
-exec --no-startup-id setxkbmap -layout us -variant intl
 exec --no-startup-id redshift-gtk -c $HOME/.config/redshift.conf
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
