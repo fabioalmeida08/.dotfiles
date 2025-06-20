@@ -1,0 +1,10 @@
+[Unit]
+Description =Lock on lid close
+Before=sleep.target
+
+[Service]
+ExecStart=%h/.config/lock.sh
+Type=oneshot
+
+[Install]
+WantedBy=sleep.target
