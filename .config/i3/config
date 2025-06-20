@@ -343,7 +343,7 @@ mode "$mode_gaps_left" {
 }
 
 bindsym $mod+shift+v exec pavucontrol
-bindsym $mod+x exec i3lock -i ~/Wallpapers/copland.png
+bindsym $mod+x exec i3lock -i ~/Wallpapers/copland.png --center
 for_window [class="pavucontrol"] floating enable, move position center
 bindsym $mod+shift+f exec thunar
 bindsym Print exec flameshot gui
