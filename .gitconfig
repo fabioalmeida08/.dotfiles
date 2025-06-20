@@ -1,6 +1,6 @@
 [user]
 name = "fabio"
-email =  
+email = "fabioalmeida0896@gmail.com"
 [alias]
 	s = !git status -s
 	a = !git add -A
