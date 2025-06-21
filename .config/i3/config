@@ -204,14 +204,14 @@ bindsym $mod+r mode "resize"
 # }
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Color shemes for windows 
-set $bgcolor    #262626
+set $bgcolor    #0D0208
 set $in-bgcolor #464646
-set $text       #ffffff
+set $text       #00ff41
 set $u-bgcolor  #ff0000
 set $indicator  #00f000
 set $in-text    #969696
 #                       border          background      text            indicator (a line which shows where the next window will be placed)     
-client.focused          $u-bgcolor      $bgcolor        $text           $indicator
+client.focused          #00cc00         $bgcolor        $text           $indicator
 client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
