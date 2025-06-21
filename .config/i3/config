@@ -352,5 +352,5 @@ exec --no-startup-id picom -f
 exec --no-startup-id setxkbmap -layout us -variant intl -option caps:escape
 exec --no-startup-id ~/.screenlayout/screen.sh
 exec --no-startup-id redshift-gtk -c $HOME/.config/redshift.conf
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +10% && bash ~/.config/custom_scripts/brilho.sh
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-&& bash ~/.config/custom_scripts/brilho.sh
