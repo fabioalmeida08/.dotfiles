@@ -34,7 +34,7 @@ window {
   location : northwest;
   width    : 280px;
   x-offset : 0px;
-  y-offset : 32px;
+  y-offset : 21px;
 
   background-color: @bg1;
   border: 2px;
