@@ -348,7 +348,7 @@ for_window [class="pavucontrol"] floating enable, move position center
 bindsym $mod+shift+f exec thunar
 bindsym Print exec flameshot gui
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id picom -f
+#exec --no-startup-id picom -f
 exec --no-startup-id setxkbmap -layout us -variant intl -option caps:escape
 exec --no-startup-id ~/.screenlayout/screen.sh
 exec --no-startup-id redshift-gtk -c $HOME/.config/redshift.conf
