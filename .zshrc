@@ -135,6 +135,9 @@ alias nv="nvim"
 alias yy="yazi"
 alias lg="lazygit"
 alias cp="rsync -ahv --info=progress2"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
 
 PATH=$PATH:~/.cargo/bin
 
