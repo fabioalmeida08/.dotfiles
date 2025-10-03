@@ -138,6 +138,7 @@ alias cp="rsync -ahv --info=progress2"
 alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
+alias gs="git status"
 
 PATH=$PATH:~/.cargo/bin
 
