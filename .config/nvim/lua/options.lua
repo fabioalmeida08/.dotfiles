@@ -18,8 +18,8 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.opt_local.expandtab = false  -- Usar TABS REAIS 
     vim.opt_local.tabstop = 2        -- Tab visual = 4 espaços
-    vim.opt_local.shiftwidth = 4     -- Indentação = 4 espaços
-    vim.opt_local.softtabstop = 4    -- Backspace = 4 espaços
+    vim.opt_local.shiftwidth = 2     -- Indentação = 4 espaços
+    vim.opt_local.softtabstop = 2    -- Backspace = 4 espaços
   end,
 })
 
