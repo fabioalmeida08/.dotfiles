@@ -32,8 +32,8 @@ return {
     return {
       ensure_installed = {
         "clangd",
-        "clang-format",
-        "codelldb",
+        -- "clang-format",
+        -- "codelldb",
       },
       
       PATH = "prepend",
