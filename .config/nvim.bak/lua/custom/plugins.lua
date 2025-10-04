@@ -9,13 +9,13 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "rust-analyzer",
-        "pyright",
-        "black",
-        "debugpy",
+        -- "rust-analyzer",
+        -- "pyright",
+        -- "black",
+        -- "debugpy",
         -- "eslint-lsp",
-        "mypy",
-        "python-lsp-server",
+        -- "mypy",
+        -- "python-lsp-server",
         -- "prettierd",
         -- "tailwindcss-language-server",
         -- "typescript-language-server",
@@ -37,40 +37,40 @@ local plugins = {
     branch = "master",
     event = "BufRead",
   },
-  {
-    "rust-lang/rust.vim",
-    ft= "rust",
-    init = function ()
-      vim.g.rustfmt_autosave = 1
-    end
-  },  
-  {
-    "mfussenegger/nvim-dap",
-    config = function()
-      require("custom.configs.dap").setup()
-    end,
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap" },
-    config = function()
-      require("dapui").setup()
-    end,
-  },
-  {
-    "mfussenegger/nvim-dap-python",
-    ft = "python",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap-ui",
-      "nvim-neotest/nvim-nio",
-    },
-    config = function(_, opts)
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-      require("dap-python").setup(path)
-      -- require("core.utils").load_mappings("dap_python")
-    end,
-  },
+  -- {
+  --   "rust-lang/rust.vim",
+  --   ft= "rust",
+  --   init = function ()
+  --     vim.g.rustfmt_autosave = 1
+  --   end
+  -- },  
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   config = function()
+  --     require("custom.configs.dap").setup()
+  --   end,
+  -- },
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   dependencies = { "mfussenegger/nvim-dap" },
+  --   config = function()
+  --     require("dapui").setup()
+  --   end,
+  -- },
+  -- {
+  --   "mfussenegger/nvim-dap-python",
+  --   ft = "python",
+  --   dependencies = {
+  --     "mfussenegger/nvim-dap",
+  --     "rcarriga/nvim-dap-ui",
+  --     "nvim-neotest/nvim-nio",
+  --   },
+  --   config = function(_, opts)
+  --     local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+  --     require("dap-python").setup(path)
+  --     -- require("core.utils").load_mappings("dap_python")
+  --   end,
+  -- },
   {
     "ggandor/leap.nvim",
     event = "BufEnter",
@@ -202,56 +202,56 @@ local plugins = {
       })
     end,
   },
-  {
-    'stevearc/conform.nvim',
-    event = {"BufReadPre", "BufNewFile"},
-    opts = {},
-    config = function ()
-      require("conform").setup({
-        formatters_by_ft = {
-          lua = { "stylua" },
-          -- Conform will run multiple formatters sequentially
-          python = {"black" },
-          -- Use a sub-list to run only the first available formatter
-          javascript = { { "prettierd", "prettier" } },
-          -- c = {"clang-format"}
-          c = { "clang_format_custom"},
+  -- {
+  --   'stevearc/conform.nvim',
+  --   event = {"BufReadPre", "BufNewFile"},
+  --   opts = {},
+  --   config = function ()
+  --     require("conform").setup({
+  --       formatters_by_ft = {
+  --         lua = { "stylua" },
+  --         -- Conform will run multiple formatters sequentially
+  --         python = {"black" },
+  --         -- Use a sub-list to run only the first available formatter
+  --         javascript = { { "prettierd", "prettier" } },
+  --         -- c = {"clang-format"}
+  --         c = { "clang_format_custom"},
 
-        },
-        formatters = {
-          clang_format_custom = {
-            command = "clang-format",
-            args = { "--style=file", "--assume-filename", vim.fn.expand("$HOME") .. "/.config/nvim/.clang-format" },
-            stdin = true,
-          },
-        },
-        format_on_save = false
-        -- {
-        --   -- These options will be passed to conform.format()
-        --   timeout_ms = 500,
-        --   lsp_format = "fallback",
-        -- },
-      })
-    end
-  },
-  {
-    "okuuva/auto-save.nvim",
-    version = '^1.0.0', -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
-    cmd = "ASToggle", -- optional for lazy loading on command
-    event = { "InsertLeave" }, -- optional for lazy loading on trigger events
-    opts = {
-      -- your config goes here
-      -- or just leave it empty :)
-      enabled = true, -- Ativa o autosave por padrão
-      execution_message = nil --{
-      --     message = function()
-      --         return "" -- Retorna string vazia para desativar a mensagem
-      --     end,
-      --     dim = 0.18, -- (opcional) intensidade do escurecimento da mensagem
-      --     cleaning_interval = 1250, -- (opcional) tempo em ms para limpar a mensagem
-      -- },      
-    },
-  },
+  --       },
+  --       formatters = {
+  --         clang_format_custom = {
+  --           command = "clang-format",
+  --           args = { "--style=file", "--assume-filename", vim.fn.expand("$HOME") .. "/.config/nvim/.clang-format" },
+  --           stdin = true,
+  --         },
+  --       },
+  --       format_on_save = false
+  --       -- {
+  --       --   -- These options will be passed to conform.format()
+  --       --   timeout_ms = 500,
+  --       --   lsp_format = "fallback",
+  --       -- },
+  --     })
+  --   end
+  -- },
+  -- {
+  --   "okuuva/auto-save.nvim",
+  --   version = '^1.0.0', -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
+  --   cmd = "ASToggle", -- optional for lazy loading on command
+  --   event = { "InsertLeave" }, -- optional for lazy loading on trigger events
+  --   opts = {
+  --     -- your config goes here
+  --     -- or just leave it empty :)
+  --     enabled = true, -- Ativa o autosave por padrão
+  --     execution_message = nil --{
+  --     --     message = function()
+  --     --         return "" -- Retorna string vazia para desativar a mensagem
+  --     --     end,
+  --     --     dim = 0.18, -- (opcional) intensidade do escurecimento da mensagem
+  --     --     cleaning_interval = 1250, -- (opcional) tempo em ms para limpar a mensagem
+  --     -- },      
+  --   },
+  -- },
   {
     "danymat/neogen",
     config = function()
