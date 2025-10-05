@@ -31,7 +31,7 @@ map("n", "<leader>dd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss notifications"
 
 -- Visual Multi
 map("n", "<C-d>", "<Plug>(VM-Find-Under)", { desc = "Selecionar próxima ocorrência" })
-map("n", "<leader>sa", "<Plug>(VM-Select-All)", { desc = "Selecionar todas" })
+map("n", "<leader>sa", "<Plug>(VM-Select-All)", { desc = "Select all occurrences" })
 
 -- Auto Save
 map("n", "<leader>ta", "<cmd>ASToggle<CR>", { desc = "Toggle Auto Save" })
