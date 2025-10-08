@@ -84,7 +84,7 @@ map("n", "<leader>rs", function()
   end
 
   print("Buffer salvo como: " .. new_name)
-end, { desc = "Salvar e fechar buffer [No Name]" })
+end, { desc = "Salvar e fechar buffer" })
 
 -- Buffer operations
 -- map("n", "<leader>rs", function()
