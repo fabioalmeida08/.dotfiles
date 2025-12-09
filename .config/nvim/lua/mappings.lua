@@ -5,6 +5,9 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+map("n", ";", ":", { desc = "CMD enter command mode" })
+map("i", "jk", "<ESC>")
+
 -- Geral
 map("n", "<C-q>", "<cmd>qall<CR>", { desc = "Quit nvim" })
 map("n", "<A-j>", "<cmd>m +1<CR>", { desc = "Move cursor one line down" })
@@ -63,13 +66,42 @@ end, { desc = "Formatar código" })
 
 map("n", "<leader>mh", "<cmd>Stdheader<CR>", { desc = "Header 42" })
 
+map("n", "<leader>rs", function()
+  local old_name = vim.fn.expand("%:p")
+  local new_name = vim.fn.input("Salvar como: ", old_name ~= "" and old_name or "", "file")
+
+  if new_name == "" then
+    print("Cancelado.")
+    return
+  end
+
+  -- Salva o buffer atual como novo arquivo
+  vim.cmd("saveas " .. vim.fn.fnameescape(new_name))
+
+  -- Fecha o buffer antigo (só se ele era [No Name])
+  if old_name == "" then
+    vim.cmd("bdelete #")  -- fecha o buffer anterior
+  end
+
+  print("Buffer salvo como: " .. new_name)
+end, { desc = "Salvar e fechar buffer" })
+
+-- Buffer operations
+-- map("n", "<leader>rs", function()
+--   local current_name = vim.fn.expand("%")
+--   local new_name = vim.fn.input("Save as: ", current_name, "file")
+  
+--   if new_name ~= "" and new_name ~= current_name then
+--     vim.cmd("saveas " .. new_name)
+--     vim.notify("Buffer saved as: " .. new_name, vim.log.levels.INFO)
+--   elseif new_name == current_name then
+--     vim.cmd("write")
+--     vim.notify("Buffer saved!", vim.log.levels.INFO)
+--   end
+-- end, { desc = "Save and rename buffer" })
+
 -- -- Compiler
 -- map("n", "<leader>mcc", "<cmd>CompilerOpen<CR>", { desc = "Abrir compilador" })
 -- map("n", "<leader>mct", "<cmd>CompilerToggleResults<CR>", { desc = "Toggle compilador" })
-
-local map = vim.keymap.set
-
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
