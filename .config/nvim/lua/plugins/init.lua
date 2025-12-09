@@ -34,6 +34,13 @@ return {
         "clangd",
         -- "clang-format",
         -- "codelldb",
+        -- 🐍 Python
+        "pyright",           -- LSP principal para Python
+        "ruff",              -- Linter rápido + formatter
+        "debugpy",           -- Debugger para Python
+        "black",             -- Formatter padrão da indústria
+        "isort",             -- Organizador de imports
+        "mypy",              -- Type checker opcional
       },
       
       PATH = "prepend",
