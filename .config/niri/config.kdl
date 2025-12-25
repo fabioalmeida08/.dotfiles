@@ -9,6 +9,7 @@ input {
         xkb {
             layout "us" // Use the German keyboard layout
             variant "intl"
+            options "caps:escape"
         }
         numlock // Enable numlock on startup
     }
@@ -27,7 +28,7 @@ input {
 // You will have to remove "/-" and edit it before it takes effect.
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
-/- output "DP-1" {
+output "DP-1" {
     mode "2560x1440@359.979" // Set resolution and refresh rate
     scale 1 // No scaling (use 2 for HiDPI)
 }
@@ -46,7 +47,7 @@ binds {
     MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol-qt"; }
 
     // Please choose your own file manager
-    MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
+    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
 
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -146,7 +147,7 @@ binds {
 
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
-    MOD+F                               { fullscreen-window; }
+    MOD+M                               { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
 
     // ─── Screenshots ───
@@ -169,12 +170,12 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    // spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
-    // spawn-sh-at-startup "swww img /usr/share/wallpapers/cachyos-wallpapers/Skyscraper.png" // Set wallpaper
     spawn-sh-at-startup "qs -c noctalia-shell" // Launch noctalia
-
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
+
+    // spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
+    // spawn-sh-at-startup "swww img /usr/share/wallpapers/cachyos-wallpapers/Skyscraper.png" // Set wallpaper
 
 // ────────────── Layout Settings ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -182,6 +183,7 @@ binds {
     layout {
         gaps 8 // Gap between windows
         center-focused-column "never" // Don’t auto-center focused column
+        always-center-single-column
 
         preset-column-widths {
             proportion 0.33333
@@ -189,12 +191,12 @@ binds {
             proportion 0.66667
         }
 
-        // default-column-width { proportion 0.; }
+        // default-column-width { proportion 0.8; }
 
         focus-ring {
-            width 2
-            // active-color "#fe8019" // Gruvbox Orange (Bright) - Muito popular!
-            active-color "#fabd2f" // para Amarelo
+            width 1.5
+            active-color "#fe8019" // Gruvbox Orange (Bright) - Muito popular!
+            // active-color "#fabd2f" // para Amarelo
             inactive-color "#3c3836" // Gruvbox bg1 (Um pouco mais escuro que a opção 1)
         }
 
@@ -204,6 +206,7 @@ binds {
             offset x=0 y=5
             color "#0007"
         }
+
 
         struts {}
     }
@@ -252,10 +255,21 @@ binds {
     }
 
     window-rule {
-        geometry-corner-radius 20 // Set every window radius to 20
+        geometry-corner-radius 5 // Set every window radius to 20
         clip-to-geometry true
     }
 
+    window-rule {
+        open-floating true
+        match app-id="pavucontrol-qt"
+        min-width 800
+        max-width 800
+    }
+
+    window-rule {
+        match app-id="zen"
+        open-fullscreen true
+    }
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
 
