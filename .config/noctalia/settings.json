@@ -53,7 +53,7 @@
                 },
                 {
                     "customFont": "",
-                    "formatHorizontal": "HH:mm | ddd dd MMM",
+                    "formatHorizontal": "HH:mm  |  ddd dd MMM",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "useCustomFont": false,
@@ -61,34 +61,6 @@
                 }
             ],
             "left": [
-                {
-                    "hideMode": "alwaysExpanded",
-                    "icon": "rocket",
-                    "id": "CustomButton",
-                    "leftClickExec": "qs -c noctalia-shell ipc call launcher toggle",
-                    "leftClickUpdateText": false,
-                    "maxTextLength": {
-                        "horizontal": 10,
-                        "vertical": 10
-                    },
-                    "middleClickExec": "",
-                    "middleClickUpdateText": false,
-                    "parseJson": false,
-                    "rightClickExec": "",
-                    "rightClickUpdateText": false,
-                    "showIcon": true,
-                    "textCollapse": "",
-                    "textCommand": "",
-                    "textIntervalMs": 3000,
-                    "textStream": false,
-                    "wheelDownExec": "",
-                    "wheelDownUpdateText": false,
-                    "wheelExec": "",
-                    "wheelMode": "unified",
-                    "wheelUpExec": "",
-                    "wheelUpUpdateText": false,
-                    "wheelUpdateText": false
-                },
                 {
                     "diskPath": "/",
                     "id": "SystemMonitor",
@@ -157,8 +129,7 @@
                     "id": "Volume"
                 },
                 {
-                    "displayMode": "onhover",
-                    "id": "Brightness"
+                    "id": "NightLight"
                 },
                 {
                     "colorizeDistroLogo": false,
@@ -277,7 +248,7 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "deadOpacity": 0.6,
-        "displayMode": "auto_hide",
+        "displayMode": "always_visible",
         "enabled": false,
         "floatingRatio": 1,
         "inactiveIndicators": false,
