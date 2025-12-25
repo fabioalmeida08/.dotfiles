@@ -138,8 +138,11 @@ alias cp="rsync -ahv --info=progress2"
 alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
-alias gs="git status"
-
+alias gpo="git pull"
+alias gs="git status -s"
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias gco="git checkout"
+alias gsw="git switch"
 PATH=$PATH:~/.cargo/bin
 
 # if command -v tmux &> /dev/null; then
