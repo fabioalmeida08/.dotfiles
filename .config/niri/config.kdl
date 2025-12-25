@@ -43,8 +43,7 @@ binds {
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: qs" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    MOD+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
-    Mod+ALT+CTRL+L { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol-qt"; }
 
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
@@ -65,12 +64,12 @@ binds {
     MOD+Q                               { close-window; }
 
     MOD+LEFT                            { focus-column-left; }
-    MOD+H                               { focus-column-left; }
     MOD+RIGHT                           { focus-column-right; }
+    MOD+H                               { focus-column-left; }
     MOD+L                               { focus-column-right; }
-    MOD+UP                              { focus-window-up; }
     // MOD+K                               { focus-window-up; }
     // MOD+J                               { focus-window-up; }
+    MOD+UP                              { focus-window-up; }
     MOD+DOWN                            { focus-window-down; }
     MOD+J                               cooldown-ms=150 { focus-workspace-down; }
     MOD+K                               cooldown-ms=150 { focus-workspace-up; }
@@ -192,9 +191,10 @@ binds {
         }
 
         focus-ring {
-            width 1
-            active-color "#11ff11"
-            inactive-color "#505050"
+            width 2
+            // active-color "#fe8019" // Gruvbox Orange (Bright) - Muito popular!
+            active-color "#fabd2f" // para Amarelo
+            inactive-color "#3c3836" // Gruvbox bg1 (Um pouco mais escuro que a opção 1)
         }
 
         shadow {
@@ -265,7 +265,7 @@ binds {
         QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
         XDG_SESSION_TYPE "wayland"
         XDG_CURRENT_DESKTOP "niri"
-  	QT_QPA_PLATFORMTHEME "qt6ct"
+        QT_QPA_PLATFORMTHEME "qt6ct"
     }
 
     hotkey-overlay {
