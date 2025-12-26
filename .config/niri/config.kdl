@@ -268,7 +268,7 @@ binds {
 
     window-rule {
         match app-id="zen"
-        open-fullscreen true
+        open-maximized true
     }
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
