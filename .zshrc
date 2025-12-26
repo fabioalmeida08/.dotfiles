@@ -152,3 +152,4 @@ PATH=$PATH:~/.cargo/bin
 # fi
 
 export editor=nvim
+eval "$(zoxide init zsh)"
