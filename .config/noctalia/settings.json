@@ -33,9 +33,9 @@
         "marginVertical": 0.25,
         "monitors": [
         ],
-        "outerCorners": true,
+        "outerCorners": false,
         "position": "top",
-        "showCapsule": true,
+        "showCapsule": false,
         "showOutline": false,
         "transparent": false,
         "widgets": {
@@ -98,13 +98,10 @@
             ],
             "right": [
                 {
-                    "id": "ScreenRecorder"
-                },
-                {
                     "blacklist": [
                     ],
                     "colorizeIcons": false,
-                    "drawerEnabled": true,
+                    "drawerEnabled": false,
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
