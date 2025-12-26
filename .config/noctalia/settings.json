@@ -33,9 +33,9 @@
         "marginVertical": 0.25,
         "monitors": [
         ],
-        "outerCorners": false,
+        "outerCorners": true,
         "position": "top",
-        "showCapsule": false,
+        "showCapsule": true,
         "showOutline": false,
         "transparent": false,
         "widgets": {
