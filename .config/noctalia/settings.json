@@ -248,7 +248,7 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "deadOpacity": 0.6,
-        "displayMode": "always_visible",
+        "displayMode": "auto_hide",
         "enabled": false,
         "floatingRatio": 1,
         "inactiveIndicators": false,
@@ -295,7 +295,7 @@
     "location": {
         "analogClockInCalendar": false,
         "firstDayOfWeek": -1,
-        "name": "Taubate",
+        "name": "Taubaté, SP",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
