@@ -50,7 +50,7 @@
                     "showArtistFirst": true,
                     "showProgressRing": true,
                     "showVisualizer": false,
-                    "useFixedWidth": false,
+                    "useFixedWidth": true,
                     "visualizerType": "linear"
                 },
                 {
@@ -261,7 +261,7 @@
         "allowPanelsOnScreenWithoutBar": true,
         "animationDisabled": false,
         "animationSpeed": 1,
-        "avatarImage": "/home/fabio/.face",
+        "avatarImage": "/home/fabio/.face.jpg",
         "boxRadiusRatio": 1,
         "compactLockScreen": false,
         "dimmerOpacity": 0.2,
