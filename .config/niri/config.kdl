@@ -44,7 +44,7 @@ binds {
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: qs" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol-qt"; }
+    MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol"; }
 
     // Please choose your own file manager
     MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
@@ -272,6 +272,7 @@ binds {
         match app-id="zen"
         open-maximized-to-edges true
     }
+
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
 
