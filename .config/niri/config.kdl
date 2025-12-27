@@ -146,11 +146,11 @@ binds {
     MOD+EQUAL                           { set-column-width "+10%"; }
     MOD+SHIFT+MINUS                     { set-window-height "-10%"; }
     MOD+SHIFT+EQUAL                     { set-window-height "+10%"; }
-
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
-    MOD+M                               { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
+    MOD+M                               { maximize-window-to-edges; }
+    MOD+SHIFT+M                         { fullscreen-window; }
 
     // ─── Screenshots ───
     CTRL+SHIFT+1                        { screenshot; }
@@ -196,10 +196,10 @@ binds {
         // default-column-width { proportion 0.8; }
 
         focus-ring {
-            width 1.5
-            active-color "#fe8019" // Gruvbox Orange (Bright) - Muito popular!
+            width 2
+            // active-color "#fe8019" // Gruvbox Orange (Bright) - Muito popular!
             // active-color "#fabd2f" // para Amarelo
-            inactive-color "#3c3836" // Gruvbox bg1 (Um pouco mais escuro que a opção 1)
+            // inactive-color "#3c3836" // Gruvbox bg1 (Um pouco mais escuro que a opção 1)
         }
 
         shadow {
@@ -270,7 +270,7 @@ binds {
 
     window-rule {
         match app-id="zen"
-        open-maximized true
+        open-maximized-to-edges true
     }
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
