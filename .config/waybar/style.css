@@ -10,7 +10,26 @@
     
     transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
+/* ─── Módulo de Mídia (MPRIS) ─── */
+#mpris {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo vidro bem suave */
+    padding: 0 12px;
+    border-radius: 8px;
+    margin: 4px 10px; /* Espaço nas laterais */
+    font-weight: normal;
+}
 
+/* Estilo para quando a música estiver pausada */
+#mpris.paused {
+    color: #888888; /* Texto cinza */
+    background-color: transparent;
+}
+
+/* Deixar o ícone do player um pouco mais brilhante que o texto */
+#mpris > label {
+    margin-left: 5px;
+}
 /* ─── A Barra (100% Largura Glass) ─── */
 window#waybar {
     background-color: rgba(0, 0, 0, 0.75);
@@ -41,7 +60,16 @@ window#waybar {
 }
 
 /* ─── Módulos (Aumentei o padding para os ícones respirarem) ─── */
+/* #cpu { */
+    /* Define uma largura fixa para acomodar " 100%" sem crescer */
+    /* min-width: 75px;  */
+/*     padding: 0 10px; */
+/*     color: #dddddd;  */
+/*     border-radius: 6px; */
+/*     margin: 4px 0; */
+/* } */
 #cpu, #memory, #temperature, #pulseaudio, #clock, #window, #tray {
+    min-width: 25px;
     padding: 0 10px;
     color: #dddddd; 
     border-radius: 6px;

@@ -6,19 +6,30 @@
 
     // ─── Organização ───
     "modules-left": ["cpu", "memory", "niri/window"],
-    "modules-center": ["niri/workspaces", "clock"],
+    "modules-center": ["niri/workspaces", "clock", "mpris"],
     "modules-right": ["tray", "pulseaudio"],
 
     // ─── Configuração com Ícones ───
+    "mpris": {
+        "format": "{player_icon} {artist} {title}",
+        "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+        "player-icons": {
+            "default": "󰐊",
+        },
+        "status-icons": {
+            "paused": "󰏤"
+        },
+        "max-length": 16
+    },
 
     "cpu": {
         // Ícone de Microchip
-        "format": "  {usage}%",
+        "format": "  {usage:2}%",
         "tooltip": false
     },
     "memory": {
         // Mostra:  4.2GB
-        "format": " {used:.1f}G",
+        "format": " {used:4.1f}G",
         // Dica: Ao passar o mouse mostra o total
         "tooltip": true,
         "tooltip-format": "Total: {total}GB\nDisponível: {avail}GB"
