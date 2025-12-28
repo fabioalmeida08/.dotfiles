@@ -1,0 +1,125 @@
+/* ─── Configurações Globais (Reset) ─── */
+* {
+    border: none;
+    border-radius: 0;
+    /* IMPORTANTE: Adicionei "Symbols Nerd Font" para garantir que os ícones apareçam */
+    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Font Awesome 6 Free", monospace;
+    font-weight: 600;
+    font-size: 14px; /* Aumentei levemente para os ícones ficarem nítidos */
+    min-height: 0;
+    
+    transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ─── A Barra (100% Largura Glass) ─── */
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Workspaces (Números) ─── */
+#workspaces button {
+    padding: 0 10px;
+    color: #888888;
+    background: transparent;
+    border-radius: 8px;
+    margin: 4px 2px;
+    transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1); 
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* ─── Módulos (Aumentei o padding para os ícones respirarem) ─── */
+#cpu, #memory, #temperature, #pulseaudio, #clock, #window, #tray {
+    padding: 0 10px;
+    color: #dddddd; 
+    border-radius: 6px;
+    margin: 4px 0;
+}
+
+/* Ícones específicos um pouco maiores ou coloridos (Opcional - mantive monocromático) */
+#cpu, #memory, #temperature {
+    font-weight: bold;
+}
+
+/* Janela Ativa */
+#window {
+    color: #aaaaaa; 
+    font-weight: normal;
+    background-color: transparent;
+}
+
+/* Efeito Hover */
+#cpu:hover, #memory:hover, #temperature:hover, #pulseaudio:hover, #clock:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* ─── Alertas ─── */
+#temperature.critical {
+    background-color: #ffffff;
+    color: #000000;
+    animation: blink 0.8s linear infinite alternate;
+}
+
+@keyframes blink {
+    to { background-color: #aa0000; color: #ffffff; }
+}
+/* ─── Menu de Contexto (Tray / Botão Direito) ─── */
+
+/* O container do menu */
+menu {
+    /* Fundo escuro quase opaco para leitura */
+    background-color: rgba(10, 10, 10, 0.95); 
+    
+    /* Texto branco */
+    color: #ffffff;
+    
+    /* Borda fina igual à da barra */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    /* Arredondamento */
+    border-radius: 8px;
+    
+    /* Espaçamento interno */
+    padding: 6px;
+    
+    /* Sombra para destacar do fundo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Itens individuais do menu */
+menuitem {
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: #dddddd;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover (passar o mouse no item do menu) */
+menuitem:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Cinza claro */
+    color: #ffffff;
+}
+
+/* Itens desativados (se houver) */
+menuitem:disabled {
+    color: #555555;
+}
+
+/* Separadores dentro do menu */
+menu separator {
+    margin: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+}

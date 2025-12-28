@@ -1,0 +1,71 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 5,
+
+    // ─── Organização ───
+    "modules-left": ["cpu", "memory", "niri/window"],
+    "modules-center": ["niri/workspaces", "clock"],
+    "modules-right": ["tray", "pulseaudio"],
+
+    // ─── Configuração com Ícones ───
+
+    "cpu": {
+        // Ícone de Microchip
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        // Mostra:  4.2GB
+        "format": " {used:.1f}G",
+        // Dica: Ao passar o mouse mostra o total
+        "tooltip": true,
+        "tooltip-format": "Total: {total}GB\nDisponível: {avail}GB"
+    },
+
+    "niri/window": {
+        // Ícone de Janela ou App antes do título
+        "format": "{title}",
+        "max-length": 50,
+        "rewrite": {
+            "(.*) - Mozilla Firefox": "Firefox",
+            "(.*) - Visual Studio Code": "VS Code",
+            "(.*) - Discord": "Discord",
+            "(.*) - Kitty": "Terminal"
+        }
+    },
+
+    "niri/workspaces": {
+        "format": "{index}",
+        "enable-bar-scroll": true
+    },
+
+    "clock": {
+        // %a = Dia da semana abreviado (Sáb)
+        // %d = Dia do mês (27)
+        // %b = Nome do mês abreviado (Dez)
+        "format": "{:%H:%M | %a %d %b}",
+        
+        "tooltip-format": "<tt>{calendar}</tt>",
+        
+        // DICA: Se o seu sistema estiver em Inglês e você quiser a data em Português,
+        // adicione esta linha abaixo. Se já estiver em PT-BR, não precisa.
+        "locale": "pt_BR.UTF-8" 
+    },
+
+    "pulseaudio": {
+        // Ícones dinâmicos de volume
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}
