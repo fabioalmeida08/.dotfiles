@@ -49,7 +49,7 @@
     },
     "memory": {
         // Mostra:  4.2GB
-        "format": " {used:4.1f}G",
+        "format": "{used:4.1f}G",
         // Dica: Ao passar o mouse mostra o total
         "tooltip": true,
         "tooltip-format": "Total: {total}GB\nDisponível: {avail}GB"
