@@ -194,11 +194,13 @@ binds {
         }
 
         // default-column-width { proportion 0.8; }
-
         focus-ring {
             width 2
             // active-color "#fe8019" // Gruvbox Orange (Bright) - Muito popular!
             // active-color "#fabd2f" // para Amarelo
+
+            active-color "#bcbcbc"        // Cinza claro (Prateado)
+            inactive-color "#1a1a1a80"    // Quase preto transparente
             // inactive-color "#3c3836" // Gruvbox bg1 (Um pouco mais escuro que a opção 1)
         }
 
@@ -289,4 +291,3 @@ binds {
     hotkey-overlay {
         skip-at-startup
     }
-include "./noctalia.kdl"
