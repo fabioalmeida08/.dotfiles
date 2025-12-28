@@ -19,6 +19,7 @@
     margin: 4px 10px; /* Espaço nas laterais */
     font-weight: normal;
 }
+
 #custom-notification {
     font-size: 16px;
     color: #ffffff;
@@ -73,7 +74,7 @@ window#waybar {
 /*     margin: 4px 0; */
 /* } */
 #cpu, #memory, #temperature, #pulseaudio, #clock, #window, #tray {
-    min-width: 25px;
+    /* min-width: 5px; */
     padding: 0 10px;
     color: #dddddd; 
     border-radius: 6px;

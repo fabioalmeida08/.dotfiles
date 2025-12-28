@@ -42,14 +42,17 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
+
     "cpu": {
-        // Ícone de Microchip
-        "format": "  {usage:2}%",
-        "tooltip": false
+        "interval": 2,
+        "format": "cpu {usage:2}%",
+        "tooltip": false,
     },
+
     "memory": {
         // Mostra:  4.2GB
-        "format": "{used:4.1f}G",
+        "format": "ram {used:4.1f}G",
+        "interval": 5,
         // Dica: Ao passar o mouse mostra o total
         "tooltip": true,
         "tooltip-format": "Total: {total}GB\nDisponível: {avail}GB"
@@ -77,9 +80,7 @@
         // %d = Dia do mês (27)
         // %b = Nome do mês abreviado (Dez)
         "format": "{:%H:%M | %a %d %b}",
-        
         "tooltip-format": "<tt>{calendar}</tt>",
-        
         // DICA: Se o seu sistema estiver em Inglês e você quiser a data em Português,
         // adicione esta linha abaixo. Se já estiver em PT-BR, não precisa.
         "locale": "pt_BR.UTF-8" 
