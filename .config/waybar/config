@@ -7,7 +7,7 @@
     // ─── Organização ───
     "modules-left": ["cpu", "memory", "niri/window"],
     "modules-center": ["niri/workspaces", "clock", "mpris"],
-    "modules-right": ["tray", "pulseaudio"],
+    "modules-right": ["tray", "custom/notification", "pulseaudio"],
 
     // ─── Configuração com Ícones ───
     "mpris": {
@@ -22,6 +22,26 @@
         "max-length": 16
     },
 
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span color='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span color='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span color='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span color='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
     "cpu": {
         // Ícone de Microchip
         "format": "  {usage:2}%",

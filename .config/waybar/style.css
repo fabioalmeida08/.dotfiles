@@ -19,7 +19,11 @@
     margin: 4px 10px; /* Espaço nas laterais */
     font-weight: normal;
 }
-
+#custom-notification {
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0 10px;
+}
 /* Estilo para quando a música estiver pausada */
 #mpris.paused {
     color: #888888; /* Texto cinza */
