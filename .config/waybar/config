@@ -44,7 +44,7 @@
     },
     "cpu": {
         // Ícone de Microchip
-        "format": "  {usage:2}%",
+        "format": "  {usage:2}%",
         "tooltip": false
     },
     "memory": {

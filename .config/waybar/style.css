@@ -3,7 +3,7 @@
     border: none;
     border-radius: 0;
     /* IMPORTANTE: Adicionei "Symbols Nerd Font" para garantir que os ícones apareçam */
-    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Font Awesome 6 Free", monospace;
+    font-family: "FiraCode Nerd Font", "Font Awesome 6 Free", monospace;
     font-weight: 600;
     font-size: 14px; /* Aumentei levemente para os ícones ficarem nítidos */
     min-height: 0;
