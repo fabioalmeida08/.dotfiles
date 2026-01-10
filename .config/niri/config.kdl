@@ -41,11 +41,11 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: qs" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    // MOD+SPACE                           hotkey-overlay-title="Open App Launcher: fuzzel" { spawn-sh "fuzzel"; }
+    // MOD+SPACE                           hotkey-overlay-title="Open App Launcher: qs" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: fuzzel" { spawn-sh "fuzzel"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
-    MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    // MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "~/.scripts/lock.sh"; }
+    // MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "~/.scripts/lock.sh"; }
     MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol"; }
 
     // Please choose your own file manager
@@ -174,9 +174,9 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    spawn-sh-at-startup "qs -c noctalia-shell" // Launch noctalia
-    // spawn-sh-at-startup "waybar" // Launch noctalia
-    // spawn-sh-at-startup "swaybg -m fill -i ~/Wallpapers/firewatch.jpg" // Launch swaybg
+    // spawn-sh-at-startup "qs -c noctalia-shell" // Launch noctalia
+    spawn-sh-at-startup "waybar" // Launch noctalia
+    spawn-sh-at-startup "swaybg -m fill -i ~/Wallpapers/firewatch.jpg" // Launch swaybg
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
 
@@ -295,3 +295,4 @@ binds {
     hotkey-overlay {
         skip-at-startup
     }
+// include "./noctalia.kdl"
