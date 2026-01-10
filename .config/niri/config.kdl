@@ -176,7 +176,7 @@ binds {
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
     spawn-sh-at-startup "qs -c noctalia-shell" // Launch noctalia
     // spawn-sh-at-startup "waybar" // Launch noctalia
-    // spawn-sh-at-startup "swaybg -m fill -i ~/wallpapers/firewatch.jpg" // Launch swaybg
+    // spawn-sh-at-startup "swaybg -m fill -i ~/Wallpapers/firewatch.jpg" // Launch swaybg
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
 
@@ -295,4 +295,3 @@ binds {
     hotkey-overlay {
         skip-at-startup
     }
-include "./noctalia.kdl"
