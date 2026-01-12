@@ -54,7 +54,6 @@ end, { desc = "Apply Preferred Fix" })
 
 -- NvimTree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
-
 -- Neogen, Conform, Header
 map("n", "<leader>md", function()
   require('neogen').generate()
