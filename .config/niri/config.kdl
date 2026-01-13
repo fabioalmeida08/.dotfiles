@@ -176,7 +176,9 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    spawn-sh-at-startup "qs -c noctalia-shell" // Launch noctalia
+    spawn-sh-at-startup "waybar" // Launch noctalia
+    spawn-sh-at-startup "wlsunset -l -23.5 -L -46.6" // Launch noctalia
+    spawn-sh-at-startup "swaybg -m fill -i ~/Wallpapers/firewatch.jpg" // Launch swaybg
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
 
