@@ -61,6 +61,10 @@ binds {
     XF86AudioPlay                       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "playerctl previous"; }
 
+    // ─── Brightness Controls ───
+    XF86MonBrightnessUp     allow-when-locked=true { spawn-sh "brightnessctl set +10%"; }
+    XF86MonBrightnessDown   allow-when-locked=true { spawn-sh "brightnessctl set 10%-"; }
+
     // ─── Window Movement and Focus ───
     MOD+Q                               { close-window; }
     MOD+LEFT                            { focus-column-left; }
