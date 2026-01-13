@@ -89,7 +89,7 @@
     "pulseaudio": {
         // Ícones dinâmicos de volume
         "format": "{icon} {volume}%",
-        "format-muted": " Muted",
+        "format-muted": " Muted",
         "format-icons": {
             "default": ["", "", ""]
         },
