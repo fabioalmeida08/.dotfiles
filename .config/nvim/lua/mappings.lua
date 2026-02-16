@@ -15,6 +15,10 @@ map("n", "<A-k>", "<cmd>m -2<CR>", { desc = "Move cursor one line up" })
 map("n", "<leader>\\", "<cmd>vsplit<CR>", { desc = "Split vertical" })
 map("n", "<leader>q", "<cmd>close<CR>", { desc = "Close window" })
 
+-- Mov
+map("n", "<C-j>", "<C-d>", { desc = "Half page down" })
+map("n", "<C-k>", "<C-u>", { desc = "Half page up" })
+
 -- Telescope & Trouble
 map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Search for todo" })
 map("n", "<leader>tt", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Trouble toggle" })
@@ -54,6 +58,7 @@ end, { desc = "Apply Preferred Fix" })
 
 -- NvimTree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+
 -- Neogen, Conform, Header
 map("n", "<leader>md", function()
   require('neogen').generate()
