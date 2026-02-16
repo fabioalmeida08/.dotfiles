@@ -7,7 +7,7 @@
 input {
     keyboard {
         xkb {
-            layout "us" // Use the German keyboard layout
+            layout "us"
             variant "intl"
             options "caps:escape"
         }
@@ -45,6 +45,7 @@ binds {
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol"; }
+    PRINT                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "flameshot gui"; }
 
     // Please choose your own file manager
     MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
