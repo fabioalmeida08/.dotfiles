@@ -98,7 +98,7 @@ alias rbt="reboot"
 alias ls="lsd"
 alias yup="yay --noconfirm ; flatpak update -y"
 alias yof="yup ; pof"
-alias nv="neovide"
+alias n="nvim"
 alias yy="yazi"
 alias lg="lazygit"
 alias cp="rsync -ahv --info=progress2"
@@ -115,6 +115,10 @@ alias apt="man pacman"
 alias apt-get="man pacman"
 alias please="sudo"
 alias tb="nc termbin.com 9999"
+
+nv() {
+  neovide "$@" & disown
+}
 
 # Cleanup orphaned packages
 alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"

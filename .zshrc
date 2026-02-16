@@ -131,7 +131,7 @@ alias rbt="reboot"
 alias ls="lsd"
 alias yup="yay --noconfirm ; flatpak update -y"
 alias yof="yup ; pof"
-alias nv="neovide"
+alias n="nvim"
 alias yy="yazi"
 alias lg="lazygit"
 alias cp="rsync -ahv --info=progress2"
@@ -151,6 +151,10 @@ PATH=$PATH:~/.cargo/bin
 #     tmux attach || tmux new
 #   fi
 # fi
+
+nv() {
+  neovide "$@" & disown
+}
 
 export editor=nvim
 eval "$(zoxide init zsh)"
