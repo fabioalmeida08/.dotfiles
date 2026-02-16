@@ -24,6 +24,16 @@ return {
       { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+  -- {
+  --   "sphamba/smear-cursor.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  -- },
+  -- {
+  --   "karb94/neoscroll.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  -- },
   {
     "folke/todo-comments.nvim",
     lazy = false,
