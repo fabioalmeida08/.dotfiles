@@ -282,6 +282,11 @@ binds {
         open-maximized-to-edges true
     }
 
+    // Set the overview wallpaper on the backdrop.
+    layer-rule {
+      match namespace="^noctalia-overview*"
+      place-within-backdrop true
+    }
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
 

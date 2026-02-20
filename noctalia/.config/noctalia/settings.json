@@ -512,6 +512,13 @@
                 "countdownEnabled": true,
                 "enabled": true,
                 "keybind": "6"
+            },
+            {
+                "action": "rebootToUefi",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": ""
             }
         ],
         "showHeader": true,
@@ -589,9 +596,9 @@
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
-        "overviewBlur": 0.8,
+        "overviewBlur": 0.4,
         "overviewEnabled": true,
-        "overviewTint": 0.62,
+        "overviewTint": 0.6,
         "panelPosition": "follow_bar",
         "randomIntervalSec": 300,
         "setWallpaperOnAllMonitors": true,
