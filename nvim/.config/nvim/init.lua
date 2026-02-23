@@ -35,3 +35,13 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- if vim.g.neovide then
+--   -- Impede o Neovide de tentar adivinhar o tamanho antigo
+--   vim.g.neovide_remember_window_size = false
+--
+--   -- Define um tamanho padrão de colunas e linhas (ajuste ao seu gosto)
+--   -- vim.o.columns = 120
+--   -- vim.o.lines = 40
+--   vim.g.neovide_scale_factor = 0.9
+-- end
