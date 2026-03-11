@@ -303,3 +303,4 @@ binds {
     hotkey-overlay {
         skip-at-startup
     }
+
