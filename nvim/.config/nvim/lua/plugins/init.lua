@@ -41,6 +41,9 @@ return {
         "black",             -- Formatter padrão da indústria
         "isort",             -- Organizador de imports
         "mypy",              -- Type checker opcional
+        "typescript-language-server",
+        "eslint_d",
+        "prettierd",
       },
       
       PATH = "prepend",
