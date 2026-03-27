@@ -90,6 +90,24 @@ map("n", "<leader>rs", function()
   print("Buffer salvo como: " .. new_name)
 end, { desc = "Salvar e fechar buffer" })
 
+-- TODO Comments
+map("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next TODO" })
+
+map("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous TODO" })
+
+map("n", "<leader>tf", "<cmd>TodoTelescope<CR>", { desc = "Find TODOs (Telescope)" })
+
+map("n", "<leader>tl", "<cmd>TodoLocList<CR>", { desc = "TODOs in loclist" })
+
+map("n", "<leader>tq", "<cmd>TodoQuickFix<CR>", { desc = "TODOs in quickfix" })
+
+map("n", "<leader>tn", function()
+  require("todo-comments").jump_next({ keywords = { "TODO", "FIX" } })
+end, { desc = "Next important TODO" })
 -- Buffer operations
 -- map("n", "<leader>rs", function()
 --   local current_name = vim.fn.expand("%")
