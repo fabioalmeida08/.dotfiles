@@ -48,7 +48,8 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 theme = Wombat
-font-family = FiraCode Nerd Font
+# font-family = FiraCode Nerd Font
+font-family = JetBrainsMono Nerd Font
 font-size = 12.5
 background = #1e1e1e
 foreground = #e5e5e5
