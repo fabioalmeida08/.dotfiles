@@ -30,7 +30,7 @@ input {
 
 output "eDP-1" {
     mode "1920x1200@60" // Set resolution and refresh rate
-    scale 1.4 // No scaling (use 2 for HiDPI)
+    scale 1.38 // No scaling (use 2 for HiDPI)
 }
 
 // ────────────── Keybindings ──────────────
@@ -48,7 +48,7 @@ binds {
     PRINT                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "flameshot gui"; }
 
     // Please choose your own file manager
-    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
+    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "thunar"; }
 
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.
