@@ -639,9 +639,9 @@
     },
     "ui": {
         "boxBorderEnabled": false,
-        "fontDefault": "FiraCode Nerd Font",
-        "fontDefaultScale": 0.88,
-        "fontFixed": "monospace",
+        "fontDefault": "JetBrainsMono Nerd Font",
+        "fontDefaultScale": 0.85,
+        "fontFixed": "JetBrainsMono Nerd Font Mono",
         "fontFixedScale": 1,
         "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
