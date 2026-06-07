@@ -180,6 +180,13 @@
                     "unreadBadgeColor": "primary"
                 },
                 {
+                    "applyToAllMonitors": false,
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Brightness",
+                    "textColor": "none"
+                },
+                {
                     "deviceNativePath": "",
                     "displayMode": "icon-always",
                     "hideIfIdle": false,
