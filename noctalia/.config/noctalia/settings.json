@@ -224,12 +224,6 @@
                     "icon": "settings",
                     "id": "ControlCenter",
                     "useDistroLogo": false
-                },
-                {
-                    "defaultSettings": {
-                        "mode": "region"
-                    },
-                    "id": "plugin:screenshot"
                 }
             ]
         }
