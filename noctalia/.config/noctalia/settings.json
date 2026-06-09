@@ -666,7 +666,7 @@
     },
     "wallpaper": {
         "automationEnabled": true,
-        "directory": "/home/fabio/Pictures/Wallpapers",
+        "directory": "/home/fabio/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
