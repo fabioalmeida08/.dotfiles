@@ -3,6 +3,9 @@
 
 // ────────────── Input Configuration ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+switch-events {
+    lid-close { spawn "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend && sleep 0.5"; }
+}
 
 input {
     keyboard {
@@ -29,8 +32,8 @@ input {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
 output "eDP-1" {
-    mode "2560x1440@359.979" // Set resolution and refresh rate
-    scale 1.4 // No scaling (use 2 for HiDPI)
+    mode "1920x1200@60" // Set resolution and refresh rate
+    scale 1.38 // No scaling (use 2 for HiDPI)
 }
 
 // ────────────── Keybindings ──────────────
@@ -45,10 +48,10 @@ binds {
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol"; }
-    PRINT                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "flameshot gui"; }
+    PRINT                               hotkey-overlay-title="Print Screen" { screenshot; }
 
     // Please choose your own file manager
-    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
+    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "thunar"; }
 
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.

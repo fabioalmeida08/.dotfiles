@@ -3,9 +3,6 @@
 
 // ────────────── Input Configuration ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
-switch-events {
-    lid-close { spawn "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend && sleep 0.5"; }
-}
 
 input {
     keyboard {
@@ -48,7 +45,7 @@ binds {
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol"; }
-    PRINT                               hotkey-overlay-title="Print Screen" { screenshot; }
+    PRINT                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "flameshot gui"; }
 
     // Please choose your own file manager
     MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "thunar"; }

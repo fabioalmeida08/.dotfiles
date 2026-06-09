@@ -152,7 +152,7 @@
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 145,
+                    "maxWidth": 135,
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "showText": true,
@@ -181,9 +181,6 @@
                     "unreadBadgeColor": "primary"
                 },
                 {
-                    "defaultSettings": {
-                        "preservationMode": 0
-                    },
                     "id": "plugin:ideapad-battery-health"
                 },
                 {
@@ -669,7 +666,7 @@
     },
     "wallpaper": {
         "automationEnabled": true,
-        "directory": "/home/fabio/Wallpapers",
+        "directory": "/home/fabio/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
