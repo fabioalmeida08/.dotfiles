@@ -1,8 +1,13 @@
+
 // Niri configuration for CachyOS
 // For documentation and full reference, see: https://github.com/YaLTeR/niri/wiki
 
 // ────────────── Input Configuration ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+switch-events {
+    lid-close { spawn "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend"; }
+}
 
 input {
     keyboard {
@@ -11,7 +16,7 @@ input {
             variant "intl"
             options "caps:escape"
         }
-        numlock // Enable numlock on startup
+        // numlock // Enable numlock on startup
     }
 
     touchpad {
@@ -45,7 +50,7 @@ binds {
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol"; }
-    PRINT                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "flameshot gui"; }
+    PRINT                               hotkey-overlay-title="Print Screen" { screenshot; }
 
     // Please choose your own file manager
     MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "thunar"; }

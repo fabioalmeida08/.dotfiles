@@ -152,7 +152,7 @@
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 135,
+                    "maxWidth": 400,
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "showText": true,
@@ -181,16 +181,19 @@
                     "unreadBadgeColor": "primary"
                 },
                 {
+                    "defaultSettings": {
+                        "preservationMode": 0
+                    },
                     "id": "plugin:ideapad-battery-health"
                 },
                 {
-                    "deviceNativePath": "",
-                    "displayMode": "icon-always",
+                    "deviceNativePath": "BAT0",
+                    "displayMode": "graphic",
                     "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
-                    "showNoctaliaPerformance": false,
-                    "showPowerProfiles": false
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true
                 },
                 {
                     "applyToAllMonitors": false,
