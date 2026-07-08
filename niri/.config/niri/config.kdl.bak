@@ -1,12 +1,10 @@
-
 // Niri configuration for CachyOS
 // For documentation and full reference, see: https://github.com/YaLTeR/niri/wiki
 
 // ────────────── Input Configuration ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
-
 switch-events {
-    lid-close { spawn "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend"; }
+    lid-close { spawn "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend && sleep 0.5"; }
 }
 
 input {
@@ -16,7 +14,7 @@ input {
             variant "intl"
             options "caps:escape"
         }
-        // numlock // Enable numlock on startup
+        numlock // Enable numlock on startup
     }
 
     touchpad {
