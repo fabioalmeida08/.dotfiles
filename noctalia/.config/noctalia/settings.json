@@ -181,12 +181,6 @@
                     "unreadBadgeColor": "primary"
                 },
                 {
-                    "defaultSettings": {
-                        "preservationMode": 0
-                    },
-                    "id": "plugin:ideapad-battery-health"
-                },
-                {
                     "deviceNativePath": "BAT0",
                     "displayMode": "graphic",
                     "hideIfIdle": false,
@@ -214,6 +208,9 @@
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
                     "textColor": "none"
+                },
+                {
+                    "id": "plugin:ideapad-battery-health"
                 },
                 {
                     "colorizeDistroLogo": false,
@@ -375,7 +372,7 @@
         "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": true,
-        "enableShadows": false,
+        "enableShadows": true,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
         "keybinds": {
@@ -654,7 +651,7 @@
         "enableUserTheming": false
     },
     "ui": {
-        "boxBorderEnabled": false,
+        "boxBorderEnabled": true,
         "fontDefault": "JetBrainsMono Nerd Font",
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono Nerd Font Mono",
