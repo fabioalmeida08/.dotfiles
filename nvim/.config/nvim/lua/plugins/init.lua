@@ -44,8 +44,8 @@ return {
         "typescript-language-server",
         "eslint_d",
         "prettierd",
-        -- "terraform-ls",
-        "tofu-ls",
+        "terraform-ls",
+        -- "tofu-ls",
         -- "tflint"
       },
       

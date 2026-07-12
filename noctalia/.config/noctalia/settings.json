@@ -210,6 +210,9 @@
                     "textColor": "none"
                 },
                 {
+                    "defaultSettings": {
+                        "preservationMode": 0
+                    },
                     "id": "plugin:ideapad-battery-health"
                 },
                 {
