@@ -36,6 +36,8 @@ vim.schedule(function()
   require "mappings"
 end)
 
+require("configs.filetypes")
+
 -- if vim.g.neovide then
 --   -- Impede o Neovide de tentar adivinhar o tamanho antigo
 --   vim.g.neovide_remember_window_size = false
