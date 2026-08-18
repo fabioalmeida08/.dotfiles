@@ -1,0 +1,29 @@
+# font_family FiraCode Nerd Font
+
+font_family JetBrainsMono Nerd Font
+
+font_size 12.5
+
+copy_on_select yes
+
+confirm_os_window_close 0
+
+tab_bar_style slant
+
+tab_bar_align left
+
+shell_integration enabled
+
+kitty_mod ctrl+shift
+
+map kitty_mod+enter new_window
+
+map kitty_mod+l move_window_forward
+
+map kitty_mod+h move_window_backward
+
+map kitty_mod+i set_tab_title
+
+include ./theme.conf
+
+enabled_layouts grid

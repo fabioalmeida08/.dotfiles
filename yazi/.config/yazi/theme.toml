@@ -1,117 +1,13 @@
-[app]
-overall = { fg = "#cccccc", bg = "#1e1e1e" }
-
 [mgr]
-cwd = { fg = "#3b8eea" }
-
-hovered = { fg = "#ffffff", bg = "#424242" }
-preview_hovered = { fg = "#ffffff", bg = "#424242" }
-
-find_keyword = { fg = "#1e1e1e", bg = "#f5f543", bold = true }
-find_position = { fg = "#1e1e1e", bg = "#d670d6", bold = true }
-
-symlink_target = { fg = "#3b8eea", italic = true }
-
-marker_copied = { fg = "#23d18b", bg = "#23d18b" }
-marker_cut = { fg = "#f14c4c", bg = "#f14c4c" }
-marker_marked = { fg = "#29b8db", bg = "#29b8db" }
-marker_selected = { fg = "#3b8eea", bg = "#3b8eea" }
-
-count_copied = { fg = "#1e1e1e", bg = "#23d18b" }
-count_cut = { fg = "#1e1e1e", bg = "#f14c4c" }
-count_selected = { fg = "#1e1e1e", bg = "#3b8eea" }
-
 border_symbol = "│"
-border_style = { fg = "#414140" }
-
-
-[which]
-mask = { bg = "#1e1e1e" }
-cand = { fg = "#3b8eea" }
-rest = { fg = "#858485" }
-desc = { fg = "#cccccc" }
-separator = "  "
-separator_style = { fg = "#414140" }
-
-
-[confirm]
-border = { fg = "#414140" }
-title = { fg = "#3b8eea" }
-body = { fg = "#cccccc" }
-list = { fg = "#cccccc" }
-
-btn_yes = { fg = "#1e1e1e", bg = "#23d18b", bold = true }
-btn_no = { fg = "#1e1e1e", bg = "#f14c4c", bold = true }
-
-
-[spot]
-border = { fg = "#414140" }
-title = { fg = "#3b8eea" }
-tbl_col = { fg = "#858485" }
-tbl_cell = { fg = "#cccccc" }
-
-
-[notify]
-title_info = { fg = "#23d18b" }
-title_warn = { fg = "#f5f543" }
-title_error = { fg = "#f14c4c" }
-
-
-[pick]
-border = { fg = "#414140" }
-active = { fg = "#3b8eea", bold = true }
-
-
-[input]
-border = { fg = "#414140" }
-title = { fg = "#cccccc" }
-value = { fg = "#cccccc" }
-selected = { fg = "#1e1e1e", bg = "#3b8eea" }
-
-
-[cmp]
-border = { fg = "#414140" }
-active = { fg = "#1e1e1e", bg = "#3b8eea" }
-inactive = { fg = "#858485" }
-
-
-[task]
-border = { fg = "#414140" }
-title = { fg = "#3b8eea" }
-title_failed = { fg = "#f14c4c" }
-title_cancelled = { fg = "#858485" }
-
-hovered = { fg = "#ffffff", bg = "#424242" }
-
-
-[help]
-on = { fg = "#23d18b" }
-run = { fg = "#3b8eea" }
-desc = { fg = "#cccccc" }
-hovered = { fg = "#ffffff", bg = "#424242" }
-footer = { fg = "#858485" }
-
-
-[mode]
-normal_main = { fg = "#1e1e1e", bg = "#3b8eea", bold = true }
-normal_alt = { fg = "#cccccc", bg = "#414140" }
-
-select_main = { fg = "#1e1e1e", bg = "#23d18b", bold = true }
-select_alt = { fg = "#cccccc", bg = "#414140" }
-
-unset_main = { fg = "#1e1e1e", bg = "#f14c4c", bold = true }
-unset_alt = { fg = "#f14c4c", bg = "#414140" }
-
 
 [status]
-overall = { fg = "#cccccc", bg = "#1e1e1e" }
-
 perm_type = { fg = "#3b8eea" }
 perm_read = { fg = "#23d18b" }
 perm_write = { fg = "#f5f543" }
 perm_exec = { fg = "#f14c4c" }
 perm_sep = { fg = "#414140" }
 
-progress_label = { fg = "#cccccc" }
-progress_normal = { fg = "#3b8eea", bg = "#414140" }
-progress_error = { fg = "#f14c4c", bg = "#414140" }
+[flavor]
+dark  = "noctalia"
+light = "noctalia"
