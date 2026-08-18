@@ -19,6 +19,10 @@ map("n", "<leader>q", "<cmd>close<CR>", { desc = "Close window" })
 map("n", "<C-j>", "<C-d>", { desc = "Half page down" })
 map("n", "<C-k>", "<C-u>", { desc = "Half page up" })
 
+-- Diagnostics
+map("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+map("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+
 -- Telescope & Trouble
 map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Search for todo" })
 map("n", "<leader>tt", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Trouble toggle" })
