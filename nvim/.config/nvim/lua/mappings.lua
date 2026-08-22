@@ -112,6 +112,10 @@ map("n", "<leader>tq", "<cmd>TodoQuickFix<CR>", { desc = "TODOs in quickfix" })
 map("n", "<leader>tn", function()
   require("todo-comments").jump_next({ keywords = { "TODO", "FIX" } })
 end, { desc = "Next important TODO" })
+
+-- MiniMap
+map("n", "<leader>mm", "<cmd>lua MiniMap.toggle()<CR>", { desc = "Toggle MiniMap" })
+
 -- Buffer operations
 -- map("n", "<leader>rs", function()
 --   local current_name = vim.fn.expand("%")

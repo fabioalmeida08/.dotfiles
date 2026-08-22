@@ -12,6 +12,36 @@ return {
   --   end,
   -- },
   {
+      "echasnovski/mini.map",
+      lazy = false,
+      version = false,
+      config = function()
+          require("mini.map").setup()
+      end,
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    lazy = false,
+    dependencies = {
+      "lewis6991/gitsigns.nvim",
+      "kevinhwang91/nvim-hlslens",
+    },
+    config = function()
+      require("scrollbar").setup({
+        handlers = {
+          cursor = true,
+          diagnostic = true,
+          gitsigns = true,
+          handle = true,
+          search = true,
+          ale = false,
+        },
+      })
+      require("scrollbar.handlers.gitsigns").setup()
+      require("scrollbar.handlers.search").setup()
+    end,
+  },
+  {
     "folke/flash.nvim",
     event = "VeryLazy",
     ---@type Flash.Config
@@ -135,6 +165,9 @@ return {
     },
     config = function()
       require("noice").setup {
+        -- views = {
+        --   cmdline = { enabled = false },
+        -- },
         lsp = {
           hover = {
             enabled = false,
