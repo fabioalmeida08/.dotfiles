@@ -50,7 +50,7 @@
         "density": "default",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1,
+        "fontScale": 1.1,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
@@ -78,22 +78,6 @@
         "widgetSpacing": 6,
         "widgets": {
             "center": [
-                {
-                    "compactMode": false,
-                    "hideMode": "hidden",
-                    "hideWhenIdle": false,
-                    "id": "MediaMini",
-                    "maxWidth": 145,
-                    "panelShowAlbumArt": true,
-                    "scrollingMode": "hover",
-                    "showAlbumArt": false,
-                    "showArtistFirst": true,
-                    "showProgressRing": true,
-                    "showVisualizer": false,
-                    "textColor": "none",
-                    "useFixedWidth": true,
-                    "visualizerType": "linear"
-                },
                 {
                     "characterCount": 2,
                     "colorizeIcons": true,
@@ -161,6 +145,22 @@
                 }
             ],
             "right": [
+                {
+                    "compactMode": false,
+                    "hideMode": "hidden",
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 300,
+                    "panelShowAlbumArt": true,
+                    "scrollingMode": "hover",
+                    "showAlbumArt": false,
+                    "showArtistFirst": false,
+                    "showProgressRing": true,
+                    "showVisualizer": false,
+                    "textColor": "none",
+                    "useFixedWidth": false,
+                    "visualizerType": "linear"
+                },
                 {
                     "blacklist": [
                     ],
@@ -413,7 +413,7 @@
         "passwordChars": false,
         "radiusRatio": 1,
         "reverseScroll": false,
-        "scaleRatio": 1,
+        "scaleRatio": 1.2,
         "screenRadiusRatio": 1,
         "shadowDirection": "center",
         "shadowOffsetX": 0,
@@ -672,7 +672,7 @@
         "translucentWidgets": false
     },
     "wallpaper": {
-        "automationEnabled": true,
+        "automationEnabled": false,
         "directory": "/home/fabio/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
