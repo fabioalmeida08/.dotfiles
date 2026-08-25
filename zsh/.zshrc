@@ -159,6 +159,7 @@ alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
 alias jctl="journalctl -p 3 -xb"
 alias spwn="ssh -i ~/.ssh/pwnkey hacker@dojo.pwn.college"
+alias oc="opencode"
 
 PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
