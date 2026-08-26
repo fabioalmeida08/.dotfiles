@@ -37,6 +37,10 @@ output "eDP-1" {
     mode "1920x1200@60" // Set resolution and refresh rate
     scale 1.28 // No scaling (use 2 for HiDPI)
 }
+output "Virtual-1" {
+    mode "1920x1080@60" // Set resolution and refresh rate
+    scale 1 // No scaling (use 2 for HiDPI)
+}
 
 // ────────────── Keybindings ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
