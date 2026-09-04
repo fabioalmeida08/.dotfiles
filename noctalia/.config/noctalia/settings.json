@@ -173,6 +173,17 @@
                     ]
                 },
                 {
+                    "defaultSettings": {
+                        "autoStartBreaks": false,
+                        "autoStartWork": false,
+                        "longBreakDuration": 15,
+                        "sessionsBeforeLongBreak": 4,
+                        "shortBreakDuration": 5,
+                        "workDuration": 25
+                    },
+                    "id": "plugin:pomodoro"
+                },
+                {
                     "hideWhenZero": false,
                     "hideWhenZeroUnread": false,
                     "iconColor": "none",
@@ -672,7 +683,7 @@
         "translucentWidgets": false
     },
     "wallpaper": {
-        "automationEnabled": false,
+        "automationEnabled": true,
         "directory": "/home/fabio/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
@@ -688,7 +699,7 @@
         "overviewEnabled": true,
         "overviewTint": 0.6,
         "panelPosition": "follow_bar",
-        "randomIntervalSec": 300,
+        "randomIntervalSec": 120,
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
         "skipStartupTransition": false,
