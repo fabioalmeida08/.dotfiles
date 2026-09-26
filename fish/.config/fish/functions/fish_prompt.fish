@@ -11,10 +11,16 @@ function fish_prompt
     set -l git_info ''
     if set -l branch (git branch --show-current 2>/dev/null)
         set -l git_color "$white"
+        set -l git_symbol ''
         if not git diff --quiet 2>/dev/null || not git diff --cached --quiet 2>/dev/null
             set git_color "$red"
+            set git_symbol '⚡'
         end
-        set git_info " [$git_color$branch$reset$red]"
+        if not git ls-files --others --exclude-standard 2>/dev/null | string match -q '*'
+            set git_symbol "$git_symbol?"
+            set git_color "$red"
+        end
+        set git_info " [$git_color$branch$git_symbol$reset$red]"
     end
 
     set -l tty_name "$TTY"

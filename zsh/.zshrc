@@ -160,6 +160,7 @@ alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
 alias jctl="journalctl -p 3 -xb"
 alias spwn="ssh -i ~/.ssh/pwnkey hacker@dojo.pwn.college"
 alias oc="opencode"
+alias dotfiles-sync='cd ~/.dotfiles && stow -Rt ~ */ && echo "Dotfiles sincronizados!"'
 
 PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
