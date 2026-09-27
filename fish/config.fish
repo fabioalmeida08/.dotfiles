@@ -78,5 +78,4 @@ if command -v zoxide >/dev/null
     zoxide init fish | source
 end
 # ============ Oh My Posh ============
-set -gx OMP_THEME ~/.cache/oh-my-posh/themes/darkblood.omp.json
-oh-my-posh init fish | source
+oh-my-posh init fish --config ~/.cache/oh-my-posh/themes/darkblood.omp.json | source
