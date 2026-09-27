@@ -6,6 +6,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 
 switch-events {
+    // Noctalia: tranca e suspende ao fechar a tampa (versão alterna via noctalia-switch)
     lid-close { spawn "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend"; }
 }
 
@@ -60,7 +61,7 @@ binds {
     MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "thunar"; }
 
     // ─── Audio Controls ───
-    // Example volume keys mappings for PipeWire & WirePlumber.
+    // Volume/mic: v5 usa IPC do Noctalia (mostra OSD) · v4 usa wpctl. Passo 10%.
     // The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -72,6 +73,8 @@ binds {
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "playerctl previous"; }
 
     // ─── Brightness Controls ───
+    // Brilho: v5 usa IPC do Noctalia · v4 usa brightnessctl. Obs.: monitor HDMI não tem
+    // backlight nem DDC/CI — só funciona no painel interno (eDP).
     XF86MonBrightnessUp     allow-when-locked=true { spawn-sh "brightnessctl set +10%"; }
     XF86MonBrightnessDown   allow-when-locked=true { spawn-sh "brightnessctl set 10%-"; }
 
@@ -186,7 +189,7 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    spawn-sh-at-startup "qs -c noctalia-shell" // Launch noctalia
+    spawn-sh-at-startup "qs -c noctalia-shell" // Launch noctalia (v4)
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
 
@@ -273,7 +276,7 @@ binds {
     }
 
     window-rule {
-        geometry-corner-radius 5 // Set every window radius to 20
+        geometry-corner-radius 5 // Raio dos cantos das janelas
         clip-to-geometry true
     }
 
@@ -289,9 +292,10 @@ binds {
         open-maximized-to-edges true
     }
 
-    // Set the overview wallpaper on the backdrop.
+    // Overview (Mod+O): wallpaper borrado no fundo. O namespace é trocado pelo noctalia-switch
+    // (v5: ^noctalia-backdrop com [backdrop] enabled · v4: ^noctalia-overview).
     layer-rule {
-      match namespace="^noctalia-overview*"
+      match namespace="^noctalia-overview"
       place-within-backdrop true
     }
 
