@@ -1,0 +1,9 @@
+# Config do Noctalia v5 (~/.config/noctalia/*.toml é lido e mesclado automaticamente)
+# Validação: noctalia config validate
+
+# Overview do niri (Mod+O): camada de fundo com cópia borrada e tingida do wallpaper.
+# Valores de blur/tint vindos das suas preferências do v4 (overviewBlur/overviewTint).
+[backdrop]
+enabled = true
+blur_intensity = 0.4
+tint_intensity = 0.6
