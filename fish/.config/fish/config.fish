@@ -94,4 +94,4 @@ if command -v zoxide >/dev/null
     zoxide init fish | source
 end
 # ============ Oh My Posh ============
-oh-my-posh init fish --config ~/.cache/oh-my-posh/themes/sonicboom_dark.omp.json | source
+oh-my-posh init fish --config ~/.config/oh-my-posh/sonicboom-dark.omp.json | source
