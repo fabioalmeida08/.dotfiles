@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # aliases
-#alias ssh="kitty +kitten ssh" 
+alias ssh="kitty +kitten ssh" 
 alias vg="vagrant"
 alias vgu="vagrant up"
 alias vgp="vagrant provision"
