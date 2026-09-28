@@ -70,7 +70,7 @@ Item {
   }
   
   function getModeIcon() {
-    if (currentMode === modeWork) return "brain"
+    if (currentMode === modeWork) return "clock"
     if (currentMode === modeShortBreak) return "coffee"
     if (currentMode === modeLongBreak) return "bed"
     return "clock"

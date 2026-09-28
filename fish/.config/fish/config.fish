@@ -1,5 +1,8 @@
 # Fish config - convertido do .zshrc
 
+# ============ CachyOS defaults (prompt, greeting, cores) ============
+source /usr/share/cachyos-fish-config/cachyos-config.fish
+
 # ============ PATH ============
 set -gx PATH $HOME/.local/bin $HOME/.cargo/bin $PATH
 
