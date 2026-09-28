@@ -152,7 +152,6 @@ alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
 alias jctl="journalctl -p 3 -xb"
 alias spwn="ssh -i ~/.ssh/pwnkey hacker@dojo.pwn.college"
 alias oc="opencode"
-alias dotfiles-sync='cd ~/.dotfiles && stow -Rt ~ */ && echo "Dotfiles sincronizados!" || { echo "dotfiles-sync: stow falhou — veja os WARNINGs acima" >&2; false }'
 
 PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
@@ -164,6 +163,53 @@ PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 nv() {
   neovide "$@" & disown
+}
+
+# dotfiles-sync [--check]
+#   (sem args)  mostra o que mudaria (dry-run) e pede confirmação antes de aplicar
+#   --check     só reporta conflitos, não modifica nada
+dotfiles-sync() {
+  cd ~/.dotfiles || { echo 'dotfiles-sync: não consegui entrar em ~/.dotfiles' >&2; return 1; }
+
+  local tmp rc preview resposta
+  tmp=$(mktemp)
+  stow -n -v -t ~ */ > "$tmp" 2>&1
+  rc=$?
+  preview=$(grep -v '^WARNING: in simulation mode' "$tmp")
+  rm -f "$tmp"
+
+  if (( rc != 0 )); then
+    echo "✗ Há conflitos — nada foi aplicado:"
+    print -r -- "$preview"
+    return 1
+  fi
+
+  if [[ -z "$preview" ]]; then
+    echo "✓ Tudo já está linkado, nada a aplicar."
+    return 0
+  fi
+
+  echo "== Alterações que serão aplicadas =="
+  print -r -- "$preview"
+  echo
+
+  [[ "$1" == "--check" ]] && {
+    echo "✓ Sem conflitos (dry-run, nada aplicado)."
+    return 0
+  }
+
+  read "resposta?Aplicar? [y/N] "
+  case "$resposta" in
+    y|Y|yes) ;;
+    *) echo "Cancelado."; return 1 ;;
+  esac
+
+  if stow -Rt ~ */; then
+    echo "✓ Dotfiles sincronizados!"
+  else
+    echo 'dotfiles-sync: stow falhou — veja os WARNINGs acima' >&2
+    return 1
+  fi
 }
 
 export editor=nvim

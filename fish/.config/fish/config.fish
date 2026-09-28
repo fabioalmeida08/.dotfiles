@@ -59,20 +59,6 @@ alias cleanup="sudo pacman -Rsn (pacman -Qtdq)"
 alias jctl="journalctl -p 3 -xb"
 alias spwn="ssh -i ~/.ssh/pwnkey hacker@dojo.pwn.college"
 alias oc="opencode"
-# função (não alias): o `alias` do fish appenda $argv no fim do corpo,
-# o que quebra blocos begin/end, e assim controlamos o exit code
-function dotfiles-sync
-    if not cd ~/.dotfiles
-        echo 'dotfiles-sync: não consegui entrar em ~/.dotfiles' >&2
-        return 1
-    end
-    if stow -Rt ~ */
-        echo 'Dotfiles sincronizados!'
-    else
-        echo 'dotfiles-sync: stow falhou — veja os WARNINGs acima' >&2
-        return 1
-    end
-end
 
 # ============ Funções ============
 
@@ -87,6 +73,57 @@ end
 function nv
     neovide $argv &
     disown
+end
+
+# dotfiles-sync [--check]
+#   (sem args)  mostra o que mudaria (dry-run) e pede confirmação antes de aplicar
+#   --check     só reporta conflitos, não modifica nada
+function dotfiles-sync
+    if not cd ~/.dotfiles
+        echo 'dotfiles-sync: não consegui entrar em ~/.dotfiles' >&2
+        return 1
+    end
+
+    set -l tmp (mktemp)
+    stow -n -v -t ~ */ > $tmp 2>&1
+    set -l rc $status
+    set -l preview (string match -rv '^WARNING: in simulation mode' < $tmp)
+    rm -f $tmp
+
+    if test $rc -ne 0
+        echo "✗ Há conflitos — nada foi aplicado:"
+        string join \n $preview
+        return 1
+    end
+
+    if test (count $preview) -eq 0
+        echo "✓ Tudo já está linkado, nada a aplicar."
+        return 0
+    end
+
+    echo "== Alterações que serão aplicadas =="
+    string join \n $preview
+    echo
+
+    if test "$argv[1]" = "--check"
+        echo "✓ Sem conflitos (dry-run, nada aplicado)."
+        return 0
+    end
+
+    read -l -P "Aplicar? [y/N] " resposta
+    switch $resposta
+        case y Y yes
+        case '*'
+            echo "Cancelado."
+            return 1
+    end
+
+    if stow -Rt ~ */
+        echo "✓ Dotfiles sincronizados!"
+    else
+        echo 'dotfiles-sync: stow falhou — veja os WARNINGs acima' >&2
+        return 1
+    end
 end
 
 # ============ Zoxide ============
