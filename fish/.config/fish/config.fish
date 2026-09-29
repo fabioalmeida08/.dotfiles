@@ -59,7 +59,6 @@ alias cleanup="sudo pacman -Rsn (pacman -Qtdq)"
 alias jctl="journalctl -p 3 -xb"
 alias spwn="ssh -i ~/.ssh/pwnkey hacker@dojo.pwn.college"
 alias oc="opencode"
-alias dotfiles-sync="cd ~/.dotfiles; and stow -Rt ~ */; and echo 'Dotfiles sincronizados!'"
 
 # ============ Funções ============
 
@@ -69,6 +68,11 @@ end
 
 function kdg
     kubectl describe $argv[1] | grep $argv[2]
+end
+
+# roda em um fish filho para nao alterar o diretorio atual
+function dotfiles-sync
+    fish -c 'cd ~/.dotfiles; and stow -Rt ~ */; and echo "Dotfiles sincronizados!"'
 end
 
 function nv
