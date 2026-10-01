@@ -58,7 +58,7 @@ binds {
     PRINT                               hotkey-overlay-title="Print Screen" { screenshot; }
 
     // Please choose your own file manager
-    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "thunar"; }
+    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
 
     // ─── Audio Controls ───
     // Volume/mic: v5 usa IPC do Noctalia (mostra OSD) · v4 usa wpctl. Passo 10%.
