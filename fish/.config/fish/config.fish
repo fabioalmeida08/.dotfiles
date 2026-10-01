@@ -59,7 +59,20 @@ alias cleanup="sudo pacman -Rsn (pacman -Qtdq)"
 alias jctl="journalctl -p 3 -xb"
 alias spwn="ssh -i ~/.ssh/pwnkey hacker@dojo.pwn.college"
 alias oc="opencode"
-alias dotfiles-sync="cd ~/.dotfiles; and stow -Rt ~ */; and echo 'Dotfiles sincronizados!'"
+# função (não alias): o `alias` do fish appenda $argv no fim do corpo,
+# o que quebra blocos begin/end, e assim controlamos o exit code
+function dotfiles-sync
+    if not cd ~/.dotfiles
+        echo 'dotfiles-sync: não consegui entrar em ~/.dotfiles' >&2
+        return 1
+    end
+    if stow -Rt ~ */
+        echo 'Dotfiles sincronizados!'
+    else
+        echo 'dotfiles-sync: stow falhou — veja os WARNINGs acima' >&2
+        return 1
+    end
+end
 
 # ============ Funções ============
 

@@ -152,7 +152,7 @@ alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)"
 alias jctl="journalctl -p 3 -xb"
 alias spwn="ssh -i ~/.ssh/pwnkey hacker@dojo.pwn.college"
 alias oc="opencode"
-alias dotfiles-sync='cd ~/.dotfiles && stow -Rt ~ */ && echo "Dotfiles sincronizados!"'
+alias dotfiles-sync='cd ~/.dotfiles && stow -Rt ~ */ && echo "Dotfiles sincronizados!" || { echo "dotfiles-sync: stow falhou — veja os WARNINGs acima" >&2; false }'
 
 PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
