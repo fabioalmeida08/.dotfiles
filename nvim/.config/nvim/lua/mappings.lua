@@ -63,7 +63,7 @@ end, { desc = "Apply Preferred Fix" })
 -- NvimTree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
--- Neogen, Conform, Header
+-- Neogen, Conform
 map("n", "<leader>md", function()
   require('neogen').generate()
 end, { desc = "Gerar docs (Neogen)" })
@@ -71,8 +71,6 @@ end, { desc = "Gerar docs (Neogen)" })
 map("n", "<leader>mf", function()
   require('conform').format({ async = true, lsp_fallback = true })
 end, { desc = "Formatar código" })
-
-map("n", "<leader>mh", "<cmd>Stdheader<CR>", { desc = "Header 42" })
 
 map("n", "<leader>rs", function()
   local old_name = vim.fn.expand("%:p")
