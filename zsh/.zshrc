@@ -165,11 +165,11 @@ nv() {
   neovide "$@" & disown
 }
 
-# dotfiles-sync [--check]
+# df-sync [--check]
 #   (sem args)  mostra o que mudaria (dry-run) e pede confirmação antes de aplicar
 #   --check     só reporta conflitos, não modifica nada
-dotfiles-sync() {
-  cd ~/.dotfiles || { echo 'dotfiles-sync: não consegui entrar em ~/.dotfiles' >&2; return 1; }
+df-sync() {
+  cd ~/.dotfiles || { echo 'df-sync: não consegui entrar em ~/.dotfiles' >&2; return 1; }
 
   local tmp rc preview resposta
   tmp=$(mktemp)
@@ -207,7 +207,7 @@ dotfiles-sync() {
   if stow -Rt ~ */; then
     echo "✓ Dotfiles sincronizados!"
   else
-    echo 'dotfiles-sync: stow falhou — veja os WARNINGs acima' >&2
+    echo 'df-sync: stow falhou — veja os WARNINGs acima' >&2
     return 1
   fi
 }
