@@ -8,15 +8,12 @@ return {
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  -- Branch `main` do nvim-treesitter NÃO suporta `ensure_installed` (só `install_dir`),
+  -- então os parsers de Elixir são instalados via build.
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate | TSInstall elixir eex heex surface",
+  },
   {
     -- Sem `cmd`: o setup roda no startup, senão o ensure_installed abaixo
     -- só é processado quando você abre :Mason.
