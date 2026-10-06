@@ -3,6 +3,11 @@ local options = {
     lua = { "stylua" },
     -- css = { "prettier" },
     -- html = { "prettier" },
+
+    -- Elixir (roda `mix format`, exige mix.exs no projeto)
+    elixir = { "mix" },
+    eelixir = { "mix" },
+    heex = { "mix" },
   },
 
   -- format_on_save = {
