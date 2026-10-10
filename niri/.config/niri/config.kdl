@@ -7,7 +7,7 @@
 
 switch-events {
     // Noctalia: tranca e suspende ao fechar a tampa (versão alterna via noctalia-switch)
-    lid-close { spawn "sh" "-c" "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend"; }
+    lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
 }
 
 input {
@@ -51,9 +51,9 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: qs" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: noctalia" { spawn-sh "noctalia msg panel-toggle launcher"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
-    MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    MOD+ALT+L                           hotkey-overlay-title="Lock Screen" { spawn-sh "noctalia msg session lock"; }
     MOD+V                               hotkey-overlay-title="Lauch pavucontrol" { spawn-sh "pavucontrol"; }
     PRINT                               hotkey-overlay-title="Print Screen" { screenshot; }
 
@@ -63,10 +63,10 @@ binds {
     // ─── Audio Controls ───
     // Volume/mic: v5 usa IPC do Noctalia (mostra OSD) · v4 usa wpctl. Passo 10%.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute                       allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-up 10"; }
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-down 10"; }
+    XF86AudioMute                       allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
     XF86AudioNext                       allow-when-locked=true { spawn-sh "playerctl next"; }
     XF86AudioPause                      allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPlay                       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
@@ -75,8 +75,8 @@ binds {
     // ─── Brightness Controls ───
     // Brilho: v5 usa IPC do Noctalia · v4 usa brightnessctl. Obs.: monitor HDMI não tem
     // backlight nem DDC/CI — só funciona no painel interno (eDP).
-    XF86MonBrightnessUp     allow-when-locked=true { spawn-sh "brightnessctl set +10%"; }
-    XF86MonBrightnessDown   allow-when-locked=true { spawn-sh "brightnessctl set 10%-"; }
+    XF86MonBrightnessUp     allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown   allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
 
     // ─── Window Movement and Focus ───
     MOD+Q                               { close-window; }
@@ -189,7 +189,7 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    spawn-sh-at-startup "qs -c noctalia-shell" // Launch noctalia (v4)
+    spawn-at-startup "noctalia" // Launch noctalia (v5)
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
 
@@ -295,7 +295,7 @@ binds {
     // Overview (Mod+O): wallpaper borrado no fundo. O namespace é trocado pelo noctalia-switch
     // (v5: ^noctalia-backdrop com [backdrop] enabled · v4: ^noctalia-overview).
     layer-rule {
-      match namespace="^noctalia-overview"
+      match namespace="^noctalia-backdrop"
       place-within-backdrop true
     }
 
