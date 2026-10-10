@@ -69,10 +69,8 @@ Item {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   }
   
+  // Sempre um relógio, independente do modo
   function getModeIcon() {
-    if (currentMode === modeWork) return "clock"
-    if (currentMode === modeShortBreak) return "coffee"
-    if (currentMode === modeLongBreak) return "bed"
     return "clock"
   }
   
