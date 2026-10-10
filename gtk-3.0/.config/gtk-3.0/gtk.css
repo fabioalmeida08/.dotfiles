@@ -1,1 +1,7 @@
 @import url("noctalia.css");
+
+/* Seleção de texto legível (Evince) — usa as cores de seleção do terminal */
+.find-results:selected, .find-results:active {
+    background-color: #5f627f;
+    color: #f4f4ff;
+}
