@@ -7,3 +7,10 @@
 enabled = true
 blur_intensity = 0.4
 tint_intensity = 0.6
+
+# Widget do Pomodoro na barra: sempre ícone de relógio (o default do plugin é "brain").
+[widget.widget]
+type = "thepunkoff/pomodoro:widget"
+widget-glyph-main = "clock"
+widget-glyph-work = "clock"
+widget-glyph-break = "clock"
