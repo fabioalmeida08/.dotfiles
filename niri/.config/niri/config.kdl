@@ -58,7 +58,7 @@ binds {
     PRINT                               hotkey-overlay-title="Print Screen" { screenshot; }
 
     // Please choose your own file manager
-    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "thunar"; }
+    MOD+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
 
     // ─── Audio Controls ───
     // Volume/mic: v5 usa IPC do Noctalia (mostra OSD) · v4 usa wpctl. Passo 10%.
@@ -308,6 +308,7 @@ binds {
         QT_QPA_PLATFORM "wayland"
         QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
         XDG_SESSION_TYPE "wayland"
+        QS_ICON_THEME "Papirus-Dark"
         XDG_CURRENT_DESKTOP "niri"
         QT_QPA_PLATFORMTHEME "qt6ct"
     }

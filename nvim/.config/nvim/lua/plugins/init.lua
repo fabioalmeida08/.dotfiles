@@ -5,73 +5,61 @@ return {
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
-{
-  "williamboman/mason.nvim",
-  cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-  opts = function()
-    return {
-      ensure_installed = {
-        "clangd",
-        -- "clang-format",
-        -- "codelldb",
-        -- 🐍 Python
-        "pyright",           -- LSP principal para Python
-        "ruff",              -- Linter rápido + formatter
-        "debugpy",           -- Debugger para Python
-        "black",             -- Formatter padrão da indústria
-        "isort",             -- Organizador de imports
-        "mypy",              -- Type checker opcional
-        "typescript-language-server",
-        "eslint_d",
-        "prettierd",
-        "terraform-ls",
-        -- "tofu-ls",
-        -- "tflint"
-      },
-      
-      PATH = "prepend",
-    }
-  end,
-  config = function(_, opts)
-    require("mason").setup(opts)
-    
-    -- Auto-instalar pacotes ao iniciar
-    vim.api.nvim_create_user_command("MasonInstallAll", function()
-      if opts.ensure_installed and #opts.ensure_installed > 0 then
-        vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
-      end
-    end, {})
-    
-    -- Executar na inicialização
-    vim.g.mason_binaries_list = opts.ensure_installed
-  end,
-},
+  -- Branch `main` do nvim-treesitter NÃO suporta `ensure_installed` (só `install_dir`),
+  -- então os parsers de Elixir são instalados via build.
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate | TSInstall elixir eex heex surface",
+  },
+  {
+    -- Sem `cmd`: o setup roda no startup, senão o ensure_installed abaixo
+    -- só é processado quando você abre :Mason.
+    "williamboman/mason.nvim",
+    opts = function()
+      return {
+        ensure_installed = {
+          "clangd",
+          -- "clang-format",
+          -- "codelldb",
+          -- 🐍 Python
+          "pyright",           -- LSP principal para Python
+          "ruff",              -- Linter rápido + formatter
+          "debugpy",           -- Debugger para Python
+          "black",             -- Formatter padrão da indústria
+          "isort",             -- Organizador de imports
+          "mypy",              -- Type checker opcional
+          "typescript-language-server",
+          "eslint_d",
+          "prettierd",
+          "elixir-ls",
+          "terraform-ls",
+          -- "tofu-ls",
+          -- "tflint"
+        },
 
-{
-  "neovim/nvim-lspconfig",
-  config = function()
-    require("nvchad.configs.lspconfig").defaults()
-    require("configs.lspconfig")  -- Carrega sua config personalizada
-  end,
-},
+        PATH = "prepend",
+      }
+    end,
+    config = function(_, opts)
+      require("mason").setup(opts)
+
+      -- Instala/atualiza manualmente tudo da lista: :MasonInstallAll
+      vim.api.nvim_create_user_command("MasonInstallAll", function()
+        if opts.ensure_installed and #opts.ensure_installed > 0 then
+          vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
+        end
+      end, {})
+    end,
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("nvchad.configs.lspconfig").defaults()
+      require "configs.lspconfig" -- Carrega sua config personalizada
+    end,
+  },
 }

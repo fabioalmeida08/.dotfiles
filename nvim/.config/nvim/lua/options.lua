@@ -1,5 +1,9 @@
 require "nvchad.options"
 
+-- Binários do Mason (LSPs, formatters) precisam estar no PATH desde o início,
+-- já que o mason.nvim é lazy-loaded por :Mason e só aí aplica o PATH dele.
+vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin:" .. vim.env.PATH
+
 -- add yours here!
 
 -- local o = vim.o

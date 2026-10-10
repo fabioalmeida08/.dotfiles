@@ -247,18 +247,6 @@ return {
     cmd = "Neogen",
   },
   {
-    "Diogo-ss/42-header.nvim",
-    cmd = { "Stdheader" },
-    config = function()
-      require("42header").setup {
-        default_map = true,
-        auto_update = true,
-        user = "fabialme",
-        mail = "fabialme@student.42sp.org.br",
-      }
-    end,
-  },
-  {
     "nickjvandyke/opencode.nvim",
     version = "*", -- Latest stable release
     lazy = false,
