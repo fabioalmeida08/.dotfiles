@@ -8,11 +8,19 @@ return {
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- Branch `main` do nvim-treesitter NÃO suporta `ensure_installed` (só `install_dir`),
-  -- então os parsers de Elixir são instalados via build.
+  -- Branch `main` do nvim-treesitter: `ensure_installed` não auto-instala,
+  -- mas alimenta o comando :TSInstallAll do NvChad. O `build` antigo usava
+  -- `:TSInstall` (assíncrono) e o job era morto pelo lazy antes de compilar.
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate | TSInstall elixir eex heex surface",
+    opts = {
+      ensure_installed = {
+        "lua", "luadoc", "printf", "vim", "vimdoc",
+        "elixir", "eex", "heex", "surface",
+        "python",
+      },
+    },
+    build = ":TSUpdate",
   },
   {
     -- Sem `cmd`: o setup roda no startup, senão o ensure_installed abaixo
