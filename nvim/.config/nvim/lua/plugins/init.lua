@@ -8,9 +8,10 @@ return {
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- Branch `main` do nvim-treesitter: `ensure_installed` não auto-instala,
-  -- mas alimenta o comando :TSInstallAll do NvChad. O `build` antigo usava
-  -- `:TSInstall` (assíncrono) e o job era morto pelo lazy antes de compilar.
+  -- Branch `main` do nvim-treesitter: é a única compatível com Neovim 0.12+.
+  -- A `master` não suporta 0.12 e quebra o highlight nas injeções.
+  -- Exige o CLI `tree-sitter` (instalado via Mason: `tree-sitter-cli`).
+  -- `ensure_installed` não auto-instala, mas alimenta o :TSInstallAll do NvChad.
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {

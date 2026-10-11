@@ -27,6 +27,8 @@ vim.api.nvim_create_autocmd("FileType", {
       return
     end
 
+    -- Branch `main`: indent via API Lua (nvim 0.12+). A `master` usava a
+    -- função VimL nvim_treesitter#indent(), incompatível com o 0.12.
     vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
