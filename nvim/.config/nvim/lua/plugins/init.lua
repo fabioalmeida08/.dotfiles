@@ -45,6 +45,8 @@ return {
           "prettierd",
           "elixir-ls",
           "terraform-ls",
+          -- 🌳 Exigido pelo nvim-treesitter branch `main` (nvim 0.12+)
+          "tree-sitter-cli",
           -- "tofu-ls",
           -- "tflint"
         },
