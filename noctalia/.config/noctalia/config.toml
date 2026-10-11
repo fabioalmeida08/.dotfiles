@@ -8,8 +8,9 @@ enabled = true
 blur_intensity = 0.4
 tint_intensity = 0.6
 
-# Widget do Pomodoro na barra: ícone inicial de relógio (o default do plugin é "brain").
-# work/break mantêm os defaults (brain/coffee).
+# Widget do Pomodoro na barra: relógio quando ocioso e durante o trabalho.
+# break fica no default do plugin ("coffee").
 [widget.widget]
 type = "thepunkoff/pomodoro:widget"
 widget-glyph-main = "clock"
+widget-glyph-work = "clock"
